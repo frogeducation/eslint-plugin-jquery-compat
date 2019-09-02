@@ -1,0 +1,74 @@
+{
+  "name": "eslint-plugin-jquery-compat",
+  "version": "1.2.2",
+  "description": "Linting rules for checking jQuery version compatibility",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Frog Education",
+  "main": "lib/index.js",
+  "scripts": {
+    "coverage": "nyc npm t",
+    "lint": "eslint lib test",
+    "test": "mocha --recursive",
+    "commit": "commit",
+    "watch": "npm t -- --watch",
+    "release": "npm t && npx standard-changelog && npx semantic-release"
+  },
+  "dependencies": {
+    "eslint-utils": "^1.4.0",
+    "glob": "^7.1.4",
+    "lodash.kebabcase": "^4.1.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@commitlint/prompt-cli": "^8.1.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^5.16.0",
+    "husky": "^2.4.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm t",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frogeducation/eslint-plugin-jquery-compat"
+  },
+  "private": true,
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "maxHeaderWidth": 72,
+      "maxLineWidth": 72,
+      "defaultType": "",
+      "defaultScope": "",
+      "defaultSubject": "",
+      "defaultBody": "",
+      "defaultIssues": ""
+    }
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator"
+    ],
+    "ci": false
+  }
+}
