@@ -15,7 +15,7 @@
     "test": "mocha --recursive",
     "commit": "commit",
     "watch": "npm t -- --watch",
-    "release": "npm t && npx standard-changelog && npx semantic-release"
+    "release": "npm t && npx semantic-release"
   },
   "dependencies": {
     "eslint-utils": "^1.4.1",
@@ -26,6 +26,7 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@commitlint/prompt-cli": "^8.1.0",
+    "@semantic-release/changelog": "^3.0.4",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^5.16.0",
     "husky": "^2.4.0",
