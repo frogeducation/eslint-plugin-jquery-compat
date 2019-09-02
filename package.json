@@ -18,7 +18,7 @@
     "release": "npm t && npx standard-changelog && npx semantic-release"
   },
   "dependencies": {
-    "eslint-utils": "^1.4.0",
+    "eslint-utils": "^1.4.1",
     "glob": "^7.1.4",
     "lodash.kebabcase": "^4.1.1"
   },
