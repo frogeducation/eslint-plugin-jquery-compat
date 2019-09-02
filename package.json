@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-jquery-compat",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "Linting rules for checking jQuery version compatibility",
   "keywords": [
     "eslint",
