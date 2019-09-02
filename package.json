@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-jquery-compat",
+  "name": "@frogeducation/eslint-plugin-jquery-compat",
   "version": "2.0.0",
   "description": "Linting rules for checking jQuery version compatibility",
   "keywords": [
@@ -46,7 +46,6 @@
     "type": "git",
     "url": "https://github.com/frogeducation/eslint-plugin-jquery-compat"
   },
-  "private": true,
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -63,12 +62,5 @@
       "defaultBody": "",
       "defaultIssues": ""
     }
-  },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator"
-    ],
-    "ci": false
   }
 }
