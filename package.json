@@ -13,7 +13,6 @@
     "coverage": "nyc npm t",
     "lint": "eslint lib test",
     "test": "mocha --recursive",
-    "commit": "commit",
     "watch": "npm t -- --watch",
     "release": "npm t && npx semantic-release"
   },
@@ -25,7 +24,6 @@
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
-    "@commitlint/prompt-cli": "^8.1.0",
     "@semantic-release/changelog": "^3.0.4",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^5.16.0",
