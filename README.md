@@ -42,9 +42,16 @@ Then configure the rules you want to use under the rules section.
 Alternatively, extend the recommended config:
 
 
-```json
+```js
 {
-  "extends": ["plugin:jquery-compat/recommended"]
+  "extends": [
+    // enables all recommended rules
+    "plugin:jquery-compat/recommended",
+    // enables only the rules required to upgrade to 1.9
+    "plugin:jquery-compat/v1.9",
+    // enables only the rules required for JMVC users
+    "plugin:jquery-compat/jmvc"
+  ]
 }
 ```
 
