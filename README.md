@@ -57,28 +57,28 @@ Alternatively, extend the recommended config:
 
 ## Supported Rules
 
-### jquery-compat/no-parse-json
+### @frogeducation/jquery-compat/no-parse-json
 
 Disallows use of `$.parseJSON` (prefer native `JSON.parse`)
 
-### jquery-compat/jmvc/no-trailing-comma-after-selector
+### @frogeducation/jquery-compat/jmvc/no-trailing-comma-after-selector
 
 Disallow trailing commas after selectors in JMVC event listeners (jQuery 1.9+
 throws a parsing error).
 
-### jquery-compat/no-capitalised-html-data-attributes
+### @frogeducation/jquery-compat/no-capitalised-html-data-attributes
 
 Enforce lower-casing of HTML data attribute names within string literals.
 
-### jquery-compat/no-die
+### @frogeducation/jquery-compat/no-die
 
 Disallow use of `$.fn.die()`, which was removed in jQuery 1.9 (prefer `$.fn.off()` instead).
 
-### jquery-compat/no-live
+### @frogeducation/jquery-compat/no-live
 
 Disallow use of `$.fn.live()`, which was removed in jQuery 1.9 (prefer `$.fn.on()` instead).
 
-### jquery-compat/deferred-use-state
+### @frogeducation/jquery-compat/deferred-use-state
 
 Enforce the use of `deferred.state()` instead of `deferred.isResolved()` and `deferred.isRejected()` (removed in jQuery 1.8).
 
