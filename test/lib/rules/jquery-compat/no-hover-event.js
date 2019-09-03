@@ -11,6 +11,9 @@ ruleTester.run('jquery-compat/no-hover-event', rules['no-hover-event'], {
     },
     {
       code: '$(".foo").hover()'
+    },
+    {
+      code: 'foo.forEach(function(bar) { $quux.on(bar, baz) })'
     }
   ],
   invalid: [
