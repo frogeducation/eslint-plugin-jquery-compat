@@ -81,6 +81,10 @@ Disallows use of `$.parseJSON` (prefer native `JSON.parse`)
 
 ### jmvc
 
+#### [@frogeducation/jquery-compat/jmvc/no-hover-event](docs/rules/jmvc/no-hover-event.md)
+
+Disallow listening for 'hover' events in JMVC event listeners (removed in jQuery 1.9+, use 'mouseenter' and/or 'mouseleave' in stead)
+
 #### [@frogeducation/jquery-compat/jmvc/no-trailing-comma-after-selector](docs/rules/jmvc/no-trailing-comma-after-selector.md)
 
 Disallow trailing commas after selectors in JMVC event listeners (jQuery 1.9+
