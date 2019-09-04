@@ -626,7 +626,8 @@ JQMIGRATE: `jQuery.boxModel` / `jQuery.support.boxModel` is deprecated
 
   These two deprecated properties are false when the page is using Quirks mode, and true when the page is in standards mode. Quirks mode was never supported in jQuery so these properties were removed.
   
-  Do not use jQuery in Quirks mode, it has never been supported.}
+  Do not use jQuery in Quirks mode, it has never been supported.
+
   Examples of **correct** code for this rule:
 
   ```js
