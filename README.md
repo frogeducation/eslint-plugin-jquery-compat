@@ -617,7 +617,7 @@ JQMIGRATE: jQuery.attrFn is deprecated
 
 JQMIGRATE: `jQuery.boxModel` / `jQuery.support.boxModel` is deprecated
 
-<detail>
+<details>
   <summary>Detail</summary>
 
   These two deprecated properties are false when the page is using Quirks mode, and true when the page is in standards mode. Quirks mode was never supported in jQuery so these properties were removed.
@@ -644,7 +644,7 @@ JQMIGRATE: `jQuery.boxModel` / `jQuery.support.boxModel` is deprecated
   if (jQuery.support.boxModel) { /* ...snip... */ }
   ```
 
-</detail>
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
