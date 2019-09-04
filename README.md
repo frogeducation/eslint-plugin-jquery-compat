@@ -83,10 +83,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
 JQMIGRATE: jQuery.data() always sets/gets camelCased names
 
-- deprecated from: 3.0.0
-- fixable from: 1.0.0
-- removed from: 3.0.0
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 3.0.0 | 1.0.0 | 3.0.0 | Yes |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -182,10 +181,9 @@ JQMIGRATE: jQuery.data() always sets/gets camelCased names
 
 JQMIGRATE: `jQuery.fn.attr('selected')` might use property instead of attribute
 
-- deprecated from: 1.9.0
-- fixable from: 1.6.0
-- removed from: 1.9.0
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.9.0 | 1.6.0 | 1.9.0 | Yes |
 
 <details>
   <summary>Included in 52 configs</summary>
@@ -248,10 +246,9 @@ JQMIGRATE: `jQuery.fn.attr('selected')` might use property instead of attribute
 
 JQMIGRATE: `deferred.isResolved()` / `deferred.isRejected()` is deprecated
 
-- deprecated from: 1.7.0
-- fixable from: 1.7.0
-- removed from: 1.8.0
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.7.0 | 1.7.0 | 1.8.0 | Yes |
 
 <details>
   <summary>Included in 46 configs</summary>
@@ -308,10 +305,9 @@ JQMIGRATE: `deferred.isResolved()` / `deferred.isRejected()` is deprecated
 
 JQMIGRATE: `$(html)` HTML strings must start with '<' character
 
-- deprecated from: 1.9.0
-- fixable from: 1.0.0
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.9.0 | 1.0.0 | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -405,10 +401,9 @@ JQMIGRATE: `$(html)` HTML strings must start with '<' character
 
 JQMIGRATE: jQuery.fn.andSelf() replaced by jQuery.fn.addBack()
 
-- deprecated from: 1.8.0
-- fixable from: 1.8.0
-- removed from: 3.0.0
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.8.0 | 1.8.0 | 3.0.0 | Yes |
 
 <details>
   <summary>Included in 42 configs</summary>
@@ -461,10 +456,9 @@ JQMIGRATE: jQuery.fn.andSelf() replaced by jQuery.fn.addBack()
 
 JQMIGRATE: jQuery.fn.attr('value') no longer gets properties
 
-- deprecated from: 1.9.0
-- fixable from: 1.6.0
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.9.0 | 1.6.0 | 1.9.0 | No |
 
 <details>
   <summary>Included in 52 configs</summary>
@@ -527,10 +521,9 @@ JQMIGRATE: jQuery.fn.attr('value') no longer gets properties
 
 JQMIGRATE: jQuery.attrFn is deprecated
 
-- deprecated from: 1.8.0
-- fixable from: (no fix provided; must rewrite)
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.8.0 | (no fix provided; must rewrite) | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -624,10 +617,9 @@ JQMIGRATE: jQuery.attrFn is deprecated
 
 JQMIGRATE: jQuery.boxModel is deprecated
 
-- deprecated from: 1.3.0
-- fixable from: 1.0.0
-- removed from: 1.8.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.3.0 | 1.0.0 | 1.8.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -721,10 +713,9 @@ JQMIGRATE: jQuery.boxModel is deprecated
 
 JQMIGRATE: jQuery.browser is deprecated
 
-- deprecated from: 1.3.0
-- fixable from: 1.0.0
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.3.0 | 1.0.0 | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -818,10 +809,9 @@ JQMIGRATE: jQuery.browser is deprecated
 
 JQMIGRATE: jQuery.buildFragment() is deprecated
 
-- deprecated from: 1.8.0
-- fixable from: 1.0.0
-- removed from: 1.8.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.8.0 | 1.0.0 | 1.8.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -915,10 +905,9 @@ JQMIGRATE: jQuery.buildFragment() is deprecated
 
 JQMIGRATE: jQuery.clean() is deprecated
 
-- deprecated from: 1.9.0
-- fixable from: (no fix provided; must rewrite)
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.9.0 | (no fix provided; must rewrite) | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -1012,10 +1001,9 @@ JQMIGRATE: jQuery.clean() is deprecated
 
 JQMIGRATE: deferred.pipe() is deprecated
 
-- deprecated from: 1.8.0
-- fixable from: 1.8.0
-- removed from: (not yet removed)
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.8.0 | 1.8.0 | (not yet removed) | Yes |
 
 <details>
   <summary>Included in 42 configs</summary>
@@ -1068,10 +1056,9 @@ JQMIGRATE: deferred.pipe() is deprecated
 
 JQMIGRATE: jQuery.fn.error() is deprecated
 
-- deprecated from: 1.8.0
-- fixable from: 1.7.0
-- removed from: 3.0.0
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.8.0 | 1.7.0 | 3.0.0 | Yes |
 
 <details>
   <summary>Included in 46 configs</summary>
@@ -1128,10 +1115,9 @@ JQMIGRATE: jQuery.fn.error() is deprecated
 
 JQMIGRATE: jQuery.fn.die() is deprecated
 
-- deprecated from: 1.7.0
-- fixable from: 1.7.0
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.7.0 | 1.7.0 | 1.9.0 | No |
 
 <details>
   <summary>Included in 46 configs</summary>
@@ -1188,10 +1174,9 @@ JQMIGRATE: jQuery.fn.die() is deprecated
 
 JQMIGRATE: 'ready' event is deprecated
 
-- deprecated from: 1.8.0
-- fixable from: 1.0.0
-- removed from: (not yet removed)
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.8.0 | 1.0.0 | (not yet removed) | Yes |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -1285,10 +1270,9 @@ JQMIGRATE: 'ready' event is deprecated
 
 JQMIGRATE: Use of jQuery.fn.data('events') is deprecated
 
-- deprecated from: 1.9.0
-- fixable from: (no fix provided; must rewrite)
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.9.0 | (no fix provided; must rewrite) | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -1382,10 +1366,9 @@ JQMIGRATE: Use of jQuery.fn.data('events') is deprecated
 
 JQMIGRATE: jQuery.fn.size() is deprecated; use the .length property
 
-- deprecated from: 1.8.0
-- fixable from: 1.0.0
-- removed from: 3.0.0
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.8.0 | 1.0.0 | 3.0.0 | Yes |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -1479,10 +1462,9 @@ JQMIGRATE: jQuery.fn.size() is deprecated; use the .length property
 
 JQMIGRATE: jQuery.event.handle is undocumented and deprecated
 
-- deprecated from: 1.7.0
-- fixable from: (no fix provided; must rewrite)
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.7.0 | (no fix provided; must rewrite) | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -1576,10 +1558,9 @@ JQMIGRATE: jQuery.event.handle is undocumented and deprecated
 
 JQMIGRATE: Global events are undocumented and deprecated
 
-- deprecated from: 1.9.0
-- fixable from: (no fix provided; must rewrite)
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.9.0 | (no fix provided; must rewrite) | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -1673,10 +1654,9 @@ JQMIGRATE: Global events are undocumented and deprecated
 
 JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'
 
-- deprecated from: 1.8.0
-- fixable from: 1.0.0
-- removed from: 1.9.0
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.8.0 | 1.0.0 | 1.9.0 | Yes |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -1770,10 +1750,9 @@ JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'
 
 JQMIGRATE: jQuery.fn.live() is deprecated
 
-- deprecated from: 1.7.0
-- fixable from: 1.7.0
-- removed from: 1.9.0
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.7.0 | 1.7.0 | 1.9.0 | Yes |
 
 <details>
   <summary>Included in 46 configs</summary>
@@ -1830,10 +1809,9 @@ JQMIGRATE: jQuery.fn.live() is deprecated
 
 JQMIGRATE: jQuery.parseJSON requires a valid JSON string
 
-- deprecated from: 3.0.0
-- fixable from: 1.0.0
-- removed from: (not yet removed)
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 3.0.0 | 1.0.0 | (not yet removed) | Yes |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -1927,10 +1905,9 @@ JQMIGRATE: jQuery.parseJSON requires a valid JSON string
 
 JQMIGRATE: AJAX events should be attached to document
 
-- deprecated from: 1.9.0
-- fixable from: 1.0.0
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.9.0 | 1.0.0 | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -2024,10 +2001,9 @@ JQMIGRATE: AJAX events should be attached to document
 
 JQMIGRATE: jQuery.sub() is deprecated
 
-- deprecated from: 1.7.0
-- fixable from: 1.0.0
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.7.0 | 1.0.0 | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -2121,10 +2097,9 @@ JQMIGRATE: jQuery.sub() is deprecated
 
 JQMIGRATE: jQuery.swap() is undocumented and deprecated
 
-- deprecated from: 1.9.0
-- fixable from: (no fix provided; must rewrite)
-- removed from: (not yet removed)
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.9.0 | (no fix provided; must rewrite) | (not yet removed) | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -2218,10 +2193,9 @@ JQMIGRATE: jQuery.swap() is undocumented and deprecated
 
 JQMIGRATE: `jQuery.fn.toggle(handler, handler...)` is deprecated
 
-- deprecated from: 1.8.0
-- fixable from: 1.0.0
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.8.0 | 1.0.0 | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -2315,10 +2289,9 @@ JQMIGRATE: `jQuery.fn.toggle(handler, handler...)` is deprecated
 
 JQMIGRATE: `$(html)` text after last tag is ignored
 
-- deprecated from: 1.9.0
-- fixable from: 1.0.0
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.9.0 | 1.0.0 | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -2412,10 +2385,9 @@ JQMIGRATE: `$(html)` text after last tag is ignored
 
 JQMIGRATE: Attribute selector with '#' must be quoted
 
-- deprecated from: 1.11.0
-- fixable from: 1.0.0
-- removed from: 1.11.0
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.11.0 | 1.0.0 | 1.11.0 | Yes |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -2511,10 +2483,9 @@ JQMIGRATE: Attribute selector with '#' must be quoted
 
 JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave' (JMVC)
 
-- deprecated from: 1.8.0
-- fixable from: 1.0.0
-- removed from: 1.9.0
-- supports `--fix`: No
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.8.0 | 1.0.0 | 1.9.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
@@ -2608,10 +2579,9 @@ JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave' (JMVC
 
 Disallow trailing commas after jQuery selectors in JMVC event listeners
 
-- deprecated from: 1.9.0
-- fixable from: 1.0.0
-- removed from: 1.9.0
-- supports `--fix`: Yes
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.9.0 | 1.0.0 | 1.9.0 | Yes |
 
 <details>
   <summary>Included in 83 configs</summary>

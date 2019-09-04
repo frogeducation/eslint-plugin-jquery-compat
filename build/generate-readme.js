@@ -42,10 +42,9 @@ const result = glob.sync(path.join(__dirname, rulesDir, '**', '*.js'))
 
 ${description}
 
-- deprecated from: ${ deprecated || removed || '(not yet deprecated)' }
-- fixable from: ${ (fixFrom && semver.satisfies(fixFrom, '>=1.0.0')) ? fixFrom : '(no fix provided; must rewrite)' }
-- removed from: ${ removed || '(not yet removed)' }
-- supports \`--fix\`: ${ fixable ? 'Yes' : 'No' }
+| deprecated from | fixable from | removed at | supports \`--fix\` |
+| ---- | ---- | ---- | ---- |
+| ${deprecated || removed || '(not yet deprecated)'} | ${ (fixFrom && semver.satisfies(fixFrom, '>=1.0.0')) ? fixFrom : '(no fix provided; must rewrite)' } | ${ removed || '(not yet removed)' } | ${ fixable ? 'Yes' : 'No' } |
 
 <details>
   <summary>Included in ${resolveTags({ tags, fixFrom }).length} configs</summary>
