@@ -251,6 +251,43 @@ JQMIGRATE: `deferred.isResolved()` / `deferred.isRejected()` is deprecated
 | 1.7.0 | 1.7.0 | 1.8.0 | Yes |
 
 <details>
+  <summary>Detail</summary>
+
+  `deferred.isRejected()` and `deferred.isResolved()` were removed in jQuery 1.8;
+  use `deferred.state() === 'rejected'` and `deferred.state() === 'resolved'`
+  instead (`deferred.state()` may also return `'pending'`).
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  var myDeferred = $.Deferred()
+  
+  if (myDeferred.isRejected()) {
+    /* ...snip... */
+  } else (myDeferred.isResolved()) {
+    /* ...snip... */
+  }
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  var myDeferred = $.Deferred()
+  
+  if (myDeferred.state() === 'rejected') {
+    /* ...snip... */
+  } else (myDeferred.state() === 'resolved') {
+    /* ...snip... */
+  }
+  ```
+
+  Further reading:
+  - [`deferred.state()`](https://api.jquery.com/deferred.state/)
+  - [`deferred.isRejected()`](https://api.jquery.com/deferred.isRejected/)
+  - [`deferred.isResolved()`](https://api.jquery.com/deferred.isResolved/)
+</details>
+
+<details>
   <summary>Included in 46 configs</summary>
 
   - v1.9
@@ -399,11 +436,37 @@ JQMIGRATE: `$(html)` HTML strings must start with '<' character
 
 #### [@frogeducation/jquery-compat/no-andself](docs/rules/no-andself.md)
 
-JQMIGRATE: jQuery.fn.andSelf() replaced by jQuery.fn.addBack()
+JQMIGRATE: `jQuery.fn.andSelf()` replaced by `jQuery.fn.addBack()`
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
 | 1.8.0 | 1.8.0 | 3.0.0 | Yes |
+
+<details>
+  <summary>Detail</summary>
+
+  The .andSelf() method has been renamed to .addBack() as of jQuery 1.9 to better
+  reflect its purpose of adding back the previous set of results.
+  
+  Replace any use of .andSelf() with .addBack().
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $('.foo').find('.bar').andSelf()
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $('.foo').find('.bar').addBack()
+  ```
+
+  Further reading:
+  - [JQMIGRATE: jQuery.fn.andSelf() replaced by jQuery.fn.addBack()](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfnandself-replaced-by-jqueryfnaddback)
+  - [`.andSelf()`](https://api.jquery.com/andself/)
+  - [`.addBack()`](https://api.jquery.com/addback/)
+</details>
 
 <details>
   <summary>Included in 42 configs</summary>
@@ -454,11 +517,45 @@ JQMIGRATE: jQuery.fn.andSelf() replaced by jQuery.fn.addBack()
 
 #### [@frogeducation/jquery-compat/no-attr-value](docs/rules/no-attr-value.md)
 
-JQMIGRATE: jQuery.fn.attr('value') no longer gets properties
+JQMIGRATE: `jQuery.fn.attr('value')` no longer gets properties
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
 | 1.9.0 | 1.6.0 | 1.9.0 | No |
+
+<details>
+  <summary>Detail</summary>
+
+  Prior to jQuery 1.9, `$().attr("value")` retrieved the value property instead of
+  the value attribute (which generally reflects the value that was read from HTML
+  markup). `$().attr( "value", val )` set the value property instead of the value
+  attribute. This caused inconsistent behavior with selectors referencing the
+  value attribute.
+  
+  Use $().val() (for form controls) or $().prop("value") (for other elements) to
+  get the current value, and try to explicitly limit the use of [value=…] in
+  selectors to input and/or option elements wherever possible.  Use $().val( val )
+  (for form controls) or $().prop( "value", val ) (for other elements) to set the
+  current value.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  var value = $('input.foo').attr('value')
+  $('input.foo').attr('value', 'newValue')
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  var value = $('input.foo').val()
+  $('input.foo').val('newValue')
+  
+  var value2 = $('div.bar').prop('value')
+  $('div.bar').prop('value', 'newValue')
+  ```
+
+</details>
 
 <details>
   <summary>Included in 52 configs</summary>
@@ -519,7 +616,7 @@ JQMIGRATE: jQuery.fn.attr('value') no longer gets properties
 
 #### @frogeducation/jquery-compat/no-attrfn
 
-JQMIGRATE: jQuery.attrFn is deprecated
+JQMIGRATE: `jQuery.attrFn` is deprecated
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -628,12 +725,6 @@ JQMIGRATE: `jQuery.boxModel` / `jQuery.support.boxModel` is deprecated
   
   Do not use jQuery in Quirks mode, it has never been supported.
 
-  Examples of **correct** code for this rule:
-
-  ```js
-  (none provided)
-  ```
-
   Examples of **incorrect** code for this rule:
 
   ```js
@@ -647,6 +738,12 @@ JQMIGRATE: `jQuery.boxModel` / `jQuery.support.boxModel` is deprecated
   ```
   ```js
   if (jQuery.support.boxModel) { /* ...snip... */ }
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  // use feature detection in stead
   ```
 
   Further reading:
@@ -2521,6 +2618,34 @@ JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave' (JMVC
 | 1.8.0 | 1.0.0 | 1.9.0 | No |
 
 <details>
+  <summary>Detail</summary>
+
+  jQuery 1.9+ no longer supports the 'hover' event name. In stead, it expects 'mouseenter' or 'mouseleave'. 
+  
+  This rule ensures JMVC event listeners do not rely on the 'hover' event.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.Controller('MyController', {
+  }, {
+    "div.something hover": function() { /* ...snip... */ }
+  })
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $.Controller('MyController', {
+  }, {
+    "div.something mouseenter": function() { /* ...snip... */ },
+    "div.something mouseleave": function() { /* ...snip... */ }
+  })
+  ```
+
+</details>
+
+<details>
   <summary>Included in 83 configs</summary>
 
   - jmvc
@@ -2615,6 +2740,40 @@ Disallow trailing commas after jQuery selectors in JMVC event listeners
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
 | 1.9.0 | 1.0.0 | 1.9.0 | Yes |
+
+<details>
+  <summary>Detail</summary>
+
+  jQuery 1.9+ will throw a parsing error if a selector contains a trailing comma.
+  
+  This rule ensures JMVC event listeners do not have a trailing comma after the
+  selector.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.Controller('MyController', {
+  }, {
+    "div.something, click": function() { /* ...snip... */ }
+  })
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $.Controller('MyController', {
+  }, {
+    "div.something click": function() { /* ...snip... */ }
+  })
+  ```
+  ```js
+  $.Controller('MyController', {
+  }, {
+    "div.something,div.another click": function() { /* ...snip... */ }
+  })
+  ```
+
+</details>
 
 <details>
   <summary>Included in 83 configs</summary>
