@@ -617,6 +617,10 @@ JQMIGRATE: jQuery.attrFn is deprecated
 
 JQMIGRATE: `jQuery.boxModel` / `jQuery.support.boxModel` is deprecated
 
+| deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- |
+| 1.3.0 | 1.0.0 | 1.8.0 | No |
+
 <details>
   <summary>Detail</summary>
 
@@ -644,11 +648,10 @@ JQMIGRATE: `jQuery.boxModel` / `jQuery.support.boxModel` is deprecated
   if (jQuery.support.boxModel) { /* ...snip... */ }
   ```
 
+  Further reading:
+  - [JQMIGRATE: jQuery.support.boxModel is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jquerysupportboxmodel-is-deprecated)
+  - [`jQuery.boxModel`](https://api.jquery.com/jQuery.boxModel/)
 </details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.3.0 | 1.0.0 | 1.8.0 | No |
 
 <details>
   <summary>Included in 83 configs</summary>
