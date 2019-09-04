@@ -615,7 +615,36 @@ JQMIGRATE: jQuery.attrFn is deprecated
 
 #### [@frogeducation/jquery-compat/no-box-model](docs/rules/no-box-model.md)
 
-JQMIGRATE: jQuery.boxModel is deprecated
+JQMIGRATE: `jQuery.boxModel` / `jQuery.support.boxModel` is deprecated
+
+<detail>
+  <summary>Detail</summary>
+
+  These two deprecated properties are false when the page is using Quirks mode, and true when the page is in standards mode. Quirks mode was never supported in jQuery so these properties were removed.
+  
+  Do not use jQuery in Quirks mode, it has never been supported.}
+  Examples of **correct** code for this rule:
+
+  ```js
+  (none provided)
+  ```
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  if ($.boxModel) { /* ...snip... */ }
+  ```
+  ```js
+  if ($.support.boxModel) { /* ...snip... */ }
+  ```
+  ```js
+  if (jQuery.boxModel) { /* ...snip... */ }
+  ```
+  ```js
+  if (jQuery.support.boxModel) { /* ...snip... */ }
+  ```
+
+</detail>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
