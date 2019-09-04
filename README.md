@@ -24,7 +24,7 @@ Add `jquery-compat` to the plugins section of your `.eslintrc` configuration fil
 ```json
 {
     "plugins": [
-        "jquery-compat"
+        "@frogeducation/jquery-compat"
     ]
 }
 ```
@@ -34,7 +34,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "jquery-compat/no-parse-json": 2
+        "@frogeducation/jquery-compat/no-parse-json": 2
     }
 }
 ```
