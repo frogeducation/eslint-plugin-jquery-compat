@@ -81,7 +81,7 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
 #### [@frogeducation/jquery-compat/no-capitalised-html-data-attributes](docs/rules/no-capitalised-html-data-attributes.md)
 
-Disallow capitalised HTML data attributes
+JQMIGRATE: jQuery.data() always sets/gets camelCased names
 
 - deprecated from: 3.0.0
 - fixable from: 1.0.0
@@ -180,7 +180,7 @@ Disallow capitalised HTML data attributes
 
 #### @frogeducation/jquery-compat/attr-select
 
-Warn when using binary attributes where properties may differ e.g. .attr("select")
+JQMIGRATE: `jQuery.fn.attr('selected')` might use property instead of attribute
 
 - deprecated from: 1.9.0
 - fixable from: 1.6.0
@@ -246,7 +246,7 @@ Warn when using binary attributes where properties may differ e.g. .attr("select
 
 #### [@frogeducation/jquery-compat/deferred-use-state](docs/rules/deferred-use-state.md)
 
-Disallow use of removed deferred isRejected/isResolved functions
+JQMIGRATE: `deferred.isResolved()` / `deferred.isRejected()` is deprecated
 
 - deprecated from: 1.7.0
 - fixable from: 1.7.0
@@ -306,7 +306,7 @@ Disallow use of removed deferred isRejected/isResolved functions
 
 #### @frogeducation/jquery-compat/html-string-must-start-with-tag
 
-Warn when HTML string does not begin with <
+JQMIGRATE: `$(html)` HTML strings must start with '<' character
 
 - deprecated from: 1.9.0
 - fixable from: 1.0.0
@@ -403,7 +403,7 @@ Warn when HTML string does not begin with <
 
 #### [@frogeducation/jquery-compat/no-andself](docs/rules/no-andself.md)
 
-Warn when using deprecated .andSelf()
+JQMIGRATE: jQuery.fn.andSelf() replaced by jQuery.fn.addBack()
 
 - deprecated from: 1.8.0
 - fixable from: 1.8.0
@@ -459,7 +459,7 @@ Warn when using deprecated .andSelf()
 
 #### [@frogeducation/jquery-compat/no-attr-value](docs/rules/no-attr-value.md)
 
-Disallow use of .attr("value")
+JQMIGRATE: jQuery.fn.attr('value') no longer gets properties
 
 - deprecated from: 1.9.0
 - fixable from: 1.6.0
@@ -525,7 +525,7 @@ Disallow use of .attr("value")
 
 #### @frogeducation/jquery-compat/no-attrfn
 
-Warn when using deprecated .attrFn()
+JQMIGRATE: jQuery.attrFn is deprecated
 
 - deprecated from: 1.8.0
 - fixable from: (no fix provided; must rewrite)
@@ -622,7 +622,7 @@ Warn when using deprecated .attrFn()
 
 #### [@frogeducation/jquery-compat/no-box-model](docs/rules/no-box-model.md)
 
-Disallow use of $.boxModel/$.support.boxModel
+JQMIGRATE: jQuery.boxModel is deprecated
 
 - deprecated from: 1.3.0
 - fixable from: 1.0.0
@@ -719,7 +719,7 @@ Disallow use of $.boxModel/$.support.boxModel
 
 #### [@frogeducation/jquery-compat/no-browser](docs/rules/no-browser.md)
 
-Disallow use of $.browser
+JQMIGRATE: jQuery.browser is deprecated
 
 - deprecated from: 1.3.0
 - fixable from: 1.0.0
@@ -816,7 +816,7 @@ Disallow use of $.browser
 
 #### @frogeducation/jquery-compat/no-buildFragment
 
-Disallow use of $.buildFragment()
+JQMIGRATE: jQuery.buildFragment() is deprecated
 
 - deprecated from: 1.8.0
 - fixable from: 1.0.0
@@ -913,7 +913,7 @@ Disallow use of $.buildFragment()
 
 #### @frogeducation/jquery-compat/no-clean
 
-Disallow use of $.clean()
+JQMIGRATE: jQuery.clean() is deprecated
 
 - deprecated from: 1.9.0
 - fixable from: (no fix provided; must rewrite)
@@ -1010,7 +1010,7 @@ Disallow use of $.clean()
 
 #### [@frogeducation/jquery-compat/no-deferred-pipe](docs/rules/no-deferred-pipe.md)
 
-Warn when using deprecated deferred.pipe()
+JQMIGRATE: deferred.pipe() is deprecated
 
 - deprecated from: 1.8.0
 - fixable from: 1.8.0
@@ -1066,7 +1066,7 @@ Warn when using deprecated deferred.pipe()
 
 #### [@frogeducation/jquery-compat/no-deprecated-event-methods](docs/rules/no-deprecated-event-methods.md)
 
-Warn when using deprecated event method shortcuts
+JQMIGRATE: jQuery.fn.error() is deprecated
 
 - deprecated from: 1.8.0
 - fixable from: 1.7.0
@@ -1126,7 +1126,7 @@ Warn when using deprecated event method shortcuts
 
 #### [@frogeducation/jquery-compat/no-die](docs/rules/no-die.md)
 
-Warn when using removed jQuery.fn.die()
+JQMIGRATE: jQuery.fn.die() is deprecated
 
 - deprecated from: 1.7.0
 - fixable from: 1.7.0
@@ -1186,7 +1186,7 @@ Warn when using removed jQuery.fn.die()
 
 #### @frogeducation/jquery-compat/no-document-on-ready
 
-Disallow use of $(document).on("ready")
+JQMIGRATE: 'ready' event is deprecated
 
 - deprecated from: 1.8.0
 - fixable from: 1.0.0
@@ -1283,7 +1283,7 @@ Disallow use of $(document).on("ready")
 
 #### [@frogeducation/jquery-compat/no-fn-data-events](docs/rules/no-fn-data-events.md)
 
-Warn when using jQuery.fn.data("events")
+JQMIGRATE: Use of jQuery.fn.data('events') is deprecated
 
 - deprecated from: 1.9.0
 - fixable from: (no fix provided; must rewrite)
@@ -1380,7 +1380,7 @@ Warn when using jQuery.fn.data("events")
 
 #### [@frogeducation/jquery-compat/no-fn-size](docs/rules/no-fn-size.md)
 
-Warn when using deprecated .size() function
+JQMIGRATE: jQuery.fn.size() is deprecated; use the .length property
 
 - deprecated from: 1.8.0
 - fixable from: 1.0.0
@@ -1477,7 +1477,7 @@ Warn when using deprecated .size() function
 
 #### @frogeducation/jquery-compat/no-global-handle
 
-Warn when using undocumented $.event.handle()
+JQMIGRATE: jQuery.event.handle is undocumented and deprecated
 
 - deprecated from: 1.7.0
 - fixable from: (no fix provided; must rewrite)
@@ -1574,7 +1574,7 @@ Warn when using undocumented $.event.handle()
 
 #### @frogeducation/jquery-compat/no-global-trigger
 
-Warn when using undocumented $.event.trigger()
+JQMIGRATE: Global events are undocumented and deprecated
 
 - deprecated from: 1.9.0
 - fixable from: (no fix provided; must rewrite)
@@ -1671,7 +1671,7 @@ Warn when using undocumented $.event.trigger()
 
 #### @frogeducation/jquery-compat/no-hover-event
 
-Disallow use of .on("hover")
+JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'
 
 - deprecated from: 1.8.0
 - fixable from: 1.0.0
@@ -1768,7 +1768,7 @@ Disallow use of .on("hover")
 
 #### [@frogeducation/jquery-compat/no-live](docs/rules/no-live.md)
 
-Warn when using removed jQuery.fn.live()
+JQMIGRATE: jQuery.fn.live() is deprecated
 
 - deprecated from: 1.7.0
 - fixable from: 1.7.0
@@ -1828,7 +1828,7 @@ Warn when using removed jQuery.fn.live()
 
 #### [@frogeducation/jquery-compat/no-parse-json](docs/rules/no-parse-json.md)
 
-Disallow use of $.parseJSON
+JQMIGRATE: jQuery.parseJSON requires a valid JSON string
 
 - deprecated from: 3.0.0
 - fixable from: 1.0.0
@@ -1925,7 +1925,7 @@ Disallow use of $.parseJSON
 
 #### @frogeducation/jquery-compat/no-scoped-ajax-events
 
-Warn when using deprecated scoped ajax events
+JQMIGRATE: AJAX events should be attached to document
 
 - deprecated from: 1.9.0
 - fixable from: 1.0.0
@@ -2022,7 +2022,7 @@ Warn when using deprecated scoped ajax events
 
 #### @frogeducation/jquery-compat/no-sub
 
-Disallow use of $.sub()
+JQMIGRATE: jQuery.sub() is deprecated
 
 - deprecated from: 1.7.0
 - fixable from: 1.0.0
@@ -2119,7 +2119,7 @@ Disallow use of $.sub()
 
 #### @frogeducation/jquery-compat/no-swap
 
-Disallow use of $.swap()
+JQMIGRATE: jQuery.swap() is undocumented and deprecated
 
 - deprecated from: 1.9.0
 - fixable from: (no fix provided; must rewrite)
@@ -2216,7 +2216,7 @@ Disallow use of $.swap()
 
 #### [@frogeducation/jquery-compat/no-toggle-handler](docs/rules/no-toggle-handler.md)
 
-Warn when using deprecated $.fn.toggle(handler, handler...)
+JQMIGRATE: `jQuery.fn.toggle(handler, handler...)` is deprecated
 
 - deprecated from: 1.8.0
 - fixable from: 1.0.0
@@ -2313,7 +2313,7 @@ Warn when using deprecated $.fn.toggle(handler, handler...)
 
 #### [@frogeducation/jquery-compat/no-trailing-text-in-html-strings](docs/rules/no-trailing-text-in-html-strings.md)
 
-Warn when HTML string contains trailing text after last tag
+JQMIGRATE: `$(html)` text after last tag is ignored
 
 - deprecated from: 1.9.0
 - fixable from: 1.0.0
@@ -2410,7 +2410,7 @@ Warn when HTML string contains trailing text after last tag
 
 #### [@frogeducation/jquery-compat/quoted-hash-attribute-selectors](docs/rules/quoted-hash-attribute-selectors.md)
 
-Warn about attribute selectors whose values contain a "#" and are not quoted
+JQMIGRATE: Attribute selector with '#' must be quoted
 
 - deprecated from: 1.11.0
 - fixable from: 1.0.0
@@ -2509,7 +2509,7 @@ Warn about attribute selectors whose values contain a "#" and are not quoted
 
 #### [@frogeducation/jquery-compat/jmvc/no-hover-event](docs/rules/jmvc/no-hover-event.md)
 
-Disallow hover event in JMVC event listeners
+JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave' (JMVC)
 
 - deprecated from: 1.8.0
 - fixable from: 1.0.0
