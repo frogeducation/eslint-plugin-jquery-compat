@@ -201,7 +201,42 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
 #### @frogeducation/jquery-compat/attr-select
 
-JQMIGRATE: `jQuery.fn.attr('selected')` might use property instead of attribute
+<details>
+  <summary>JQMIGRATE: `jQuery.fn.attr('selected')` might use property instead of attribute</summary>
+
+  **Cause**: Prior to jQuery 1.9, `$().attr("checked")` etc. would sometimes use the checked|selected *property* instead of the *attribute* when interacting with non-XML elements, despite the fact that browsers and the HTML specifications allow the properties (current state) to differ from the attributes (initial/default state). This was a holdover from earlier versions of jQuery that did not offer `$().prop`.
+  
+  **Solution**: Boolean properties should generally not be passed to `$().attr` at all; replace with `$().prop` unless you truly intend to update the underlying HTML *attribute*.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  if ($foo.attr("selected")) { /* ... */ }
+  ```
+  ```js
+  if ($foo.attr("checked")) { /* ... */ }
+  ```
+  ```js
+  if ($foo.attr("disabled")) { /* ... */ }
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  if ($foo.prop("selected")) { /* ... */ }
+  ```
+  ```js
+  if ($foo.prop("checked")) { /* ... */ }
+  ```
+  ```js
+  if ($foo.prop("disabled")) { /* ... */ }
+  ```
+
+  Further reading:
+  - [JQMIGRATE: `jQuery.fn.attr('selected')` might use property instead of attribute](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfnattrselected-might-use-property-instead-of-attribute)
+  - [`.attr`](http://api.jquery.com/attr/)
+  - [`.prop`](http://api.jquery.com/prop/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -358,7 +393,32 @@ JQMIGRATE: `jQuery.fn.attr('selected')` might use property instead of attribute
 
 #### @frogeducation/jquery-compat/html-string-must-start-with-tag
 
-JQMIGRATE: `$(html)` HTML strings must start with '<' character
+<details>
+  <summary>JQMIGRATE: `$(html)` HTML strings must start with '<' character</summary>
+
+  **Cause:** In jQuery 1.9, HTML strings passed to `$()` must start with a tag; in other words the first character of the string must be a `<` character. There _cannot_ be any preceding characters, including whitespace. This is done to reduce the chances of inadvertent execution of scripts that might be present in HTML that is obtained from the URL, AJAX, or other sources. Use of simple literal HTML strings like `$("<div />")` or `$("<p>hello</p>")` are unaffected since they should not have leading spaces or text.
+  
+  **Solution**: Use the `$.parseHTML()` method to parse arbitrary HTML, especially HTML from external sources. To obtain a jQuery object that has the parsed HTML without running scripts, use `$($.parseHTML("string"))`. To run scripts in the HTML as well, use `$($.parseHTML("string", document, true))` instead. We do not recommend running `$.trim()` on the string to circumvent this check.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $("hello <strong>world</strong>")
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $($.parseHTML("hello <strong>world</strong>"))
+  ```
+  ```js
+  $("<span>hello <strong>world</strong></span>")
+  ```
+
+  Further reading:
+  - [JQMIGRATE: `$(html)` HTML strings must start with '<' character](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-html-html-strings-must-start-with--character)
+  - [$.parseHTML](https://api.jquery.com/jQuery.parseHTML)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -627,7 +687,28 @@ JQMIGRATE: `$(html)` HTML strings must start with '<' character
 
 #### @frogeducation/jquery-compat/no-attrfn
 
-JQMIGRATE: `jQuery.attrFn` is deprecated
+<details>
+  <summary>JQMIGRATE: `jQuery.attrFn` is deprecated</summary>
+
+  **Cause:** Prior to jQuery 1.8, the undocumented `jQuery.attrFn` object provided a list of properties supported by the `$(html, props)` method. It is no longer required as of jQuery 1.8, but some developers "discovered" it by reading the source and began to use it. Their code still expects `jQuery.attrFn` to be present, attempts to assign values to it, and will throw errors if it is not present.
+  
+  **Solution:** Ensure that you are using the latest version of jQuery UI (1.8.21 or later) and jQuery Mobile (1.2.1 or later); they no longer use `jQuery.attrFn`. Examine any third-party plugins for the string `attrFn` and report its use to the plugin authors (not to jQuery team).
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.attrFn.foo = "bar"
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  (none provided)
+  ```
+
+  Further reading:
+  - [JQMIGRATE: `jQuery.attrFn` is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryattrfn-is-deprecated)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -974,7 +1055,28 @@ JQMIGRATE: `jQuery.attrFn` is deprecated
 
 #### @frogeducation/jquery-compat/no-buildFragment
 
-JQMIGRATE: jQuery.buildFragment() is deprecated
+<details>
+  <summary>JQMIGRATE: jQuery.buildFragment() is deprecated</summary>
+
+  **Cause**: `jQuery.buildFragment()` and `jQuery.clean()` are undocumented internal methods. The signature of `jQuery.buildFragment()` was changed in jQuery 1.8 and 1.9, and `jQuery.clean()` was removed in 1.9. However, we are aware of some plugins or other code that might be using them.
+  
+  **Solution**: Rewrite any code that makes use of these or any other undocumented methods. For example the `jQuery.parseHTML()` method, introduced in jQuery 1.8, can convert HTML to an array of DOM elements that you can append to a document fragment.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.buildFragment()
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  (none provided)
+  ```
+
+  Further reading:
+  - [JQMIGRATE: jQuery.buildFragment() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryclean-is-deprecated)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1069,7 +1171,28 @@ JQMIGRATE: jQuery.buildFragment() is deprecated
 
 #### @frogeducation/jquery-compat/no-clean
 
-JQMIGRATE: jQuery.clean() is deprecated
+<details>
+  <summary>JQMIGRATE: jQuery.clean() is deprecated</summary>
+
+  **Cause**: `jQuery.buildFragment()` and `jQuery.clean()` are undocumented internal methods. The signature of `jQuery.buildFragment()` was changed in jQuery 1.8 and 1.9, and `jQuery.clean()` was removed in 1.9. However, we are aware of some plugins or other code that might be using them.
+  
+  **Solution**: Rewrite any code that makes use of these or any other undocumented methods. For example the `jQuery.parseHTML()` method, introduced in jQuery 1.8, can convert HTML to an array of DOM elements that you can append to a document fragment.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.clean()
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  (none provided)
+  ```
+
+  Further reading:
+  - [JQMIGRATE: jQuery.clean() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryclean-is-deprecated)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1421,7 +1544,29 @@ JQMIGRATE: jQuery.clean() is deprecated
 
 #### @frogeducation/jquery-compat/no-document-on-ready
 
-JQMIGRATE: 'ready' event is deprecated
+<details>
+  <summary>JQMIGRATE: 'ready' event is deprecated</summary>
+
+  **Cause**: Using one of jQuery's API methods to bind a "ready" event, e.g. `$( document ).on( "ready", fn )`, will cause the function to be called when the document is ready, but only if it is attached before the browser fires its own `DOMContentLoaded` event. That makes it unreliable for many uses, particularly ones where jQuery or its plugins are loaded asynchronously after page load.
+  
+  **Solution**: Replace any use of `$( document ).on( "ready", fn )` with `$( document ).ready( fn )` or more simply, just `$( fn )`. These alternative methods work reliably even when the document is already loaded.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $(document).on("ready", callback)
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $(document).ready(callback)
+  ```
+  ```js
+  $(callback)
+  ```
+
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1771,7 +1916,29 @@ JQMIGRATE: 'ready' event is deprecated
 
 #### @frogeducation/jquery-compat/no-global-handle
 
-JQMIGRATE: jQuery.event.handle is undocumented and deprecated
+<details>
+  <summary>JQMIGRATE: jQuery.event.handle is undocumented and deprecated</summary>
+
+  **Cause:** `jQuery.event.handle` was never documented, and deprecated with jQuery 1.7 (see http://forum.jquery.com/topic/deprecated-event-properties-used-in-jquery). As of jQuery 1.9, it has been removed.
+  
+  **Solution:** Use documented jQuery APIs, such as [`.trigger`](http://api.jquery.com/trigger/).
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  jQuery.event.handle
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  (none provided)
+  ```
+
+  Further reading:
+  - [JQMIGRATE: jQuery.event.handle is undocumented and deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryeventhandle-is-undocumented-and-deprecated)
+  - [`.trigger`](http://api.jquery.com/trigger/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1866,7 +2033,26 @@ JQMIGRATE: jQuery.event.handle is undocumented and deprecated
 
 #### @frogeducation/jquery-compat/no-global-trigger
 
-JQMIGRATE: Global events are undocumented and deprecated
+<details>
+  <summary>JQMIGRATE: Global events are undocumented and deprecated</summary>
+
+  **Cause:** jQuery 1.9 does not support globally triggered events. The only documented global events were the AJAX events and they are now triggered only on `document` as discussed above. jQuery never provided a documented interface for outside code to trigger global events.
+  
+  **Solution:** Change the program to avoid the use of global events. The jQuery Migrate plugin warns about this case but does _not_ restore the previous behavior since it was undocumented.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.event.trigger(/*...*/)
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  (none provided)
+  ```
+
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1961,7 +2147,39 @@ JQMIGRATE: Global events are undocumented and deprecated
 
 #### @frogeducation/jquery-compat/no-hover-event
 
-JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'
+<details>
+  <summary>JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'</summary>
+
+  **Cause:** Until jQuery 1.9, the string "hover" was allowed as an alias for the string "mouseenter mouseleave" when attaching an event handler. This unusual exception provided no real benefit and prevented the use of the name "hover" as a triggered event. _Note: This is not related to the `.hover()` method, which has not been deprecated._
+  
+  **Solution:** Replace use of the string "hover" with "mouseenter mouseleave" within any `.on()`, `.bind()`, `.delegate()`, or `.live()` event binding method.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $foo.on("hover", callback)
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $foo.on("mouseenter mouseleave", inOutCallback)
+  ```
+  ```js
+  $foo.on("mouseenter", inCallback)
+  ```
+  ```js
+  $foo.hover(inCallback, outCallback)
+  ```
+  ```js
+  $foo.hover(inOutCallback)
+  ```
+
+  Further reading:
+  - [JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-hover-pseudo-event-is-deprecated-use-mouseenter-mouseleave)
+  - [.hover](https://api.jquery.com/hover/)
+  - [.on](https://api.jquery.com/on/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -2261,7 +2479,28 @@ JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'
 
 #### @frogeducation/jquery-compat/no-scoped-ajax-events
 
-JQMIGRATE: AJAX events should be attached to document
+<details>
+  <summary>JQMIGRATE: AJAX events should be attached to document</summary>
+
+  **Cause:** As of jQuery 1.9, the global AJAX events (ajaxStart, ajaxStop, ajaxSend, ajaxComplete, ajaxError, and ajaxSuccess) are only triggered on the `document` element. 
+  
+  **Solution:** Change the program to listen for the AJAX events on the document.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $("#status").ajaxStart(function(){ $(this).text("Ajax started"); });
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $(document).ajaxStart(function(){ $("#status").text("Ajax started"); });
+  ```
+
+  Further reading:
+  - [JQMIGRATE: AJAX events should be attached to document](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-ajax-events-should-be-attached-to-document)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -2356,7 +2595,28 @@ JQMIGRATE: AJAX events should be attached to document
 
 #### @frogeducation/jquery-compat/no-sub
 
-JQMIGRATE: jQuery.sub() is deprecated
+<details>
+  <summary>JQMIGRATE: jQuery.sub() is deprecated</summary>
+
+  **Cause:** The `jQuery.sub()` method provided an imperfect way for a plugin to isolate itself from changes to the `jQuery` object. Due to its shortcomings, it was deprecated in version 1.8 and removed in 1.9.
+  
+  **Solution:** Rewrite the code that depends on `jQuery.sub()`, use the minified production version of the jQuery Migrate plugin to provide the functionality, or extract the `jQuery.sub()` method from the plugin's source and use it in the application.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.sub(/*...*/)
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  (none provided)
+  ```
+
+  Further reading:
+  - [JQMIGRATE: jQuery.sub() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jquerysub-is-deprecated)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -2451,7 +2711,28 @@ JQMIGRATE: jQuery.sub() is deprecated
 
 #### @frogeducation/jquery-compat/no-swap
 
-JQMIGRATE: jQuery.swap() is undocumented and deprecated
+<details>
+  <summary>JQMIGRATE: jQuery.swap() is undocumented and deprecated</summary>
+
+  **Cause**: The `jQuery.swap()` method temporarily exchanges a set of CSS properties. It was never documented as part of jQuery's public API and should not be used because it can cause performance problems due to forced layout.
+  
+  **Solution**: Rework the code to avoid calling `jQuery.swap()`, or explicitly set and restore the properties you need to change.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.swap(/*...*/)
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  (none provided)
+  ```
+
+  Further reading:
+  - [JQMIGRATE: jQuery.swap() is undocumented and deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryswap-is-undocumented-and-deprecated)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
