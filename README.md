@@ -95,26 +95,26 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 | [jmvc/no-trailing-comma-after-selector](#frogeducationjquery-compatjmvcno-trailing-comma-after-selector) | 1.9.0 | 1.0.0 | 1.9.0 | Yes |  |
 | [no-andself](#frogeducationjquery-compatno-andself) | 1.8.0 | 1.8.0 | 3.0.0 | Yes | Yes |
 | [no-attr-value](#frogeducationjquery-compatno-attr-value) | 1.9.0 | 1.6.0 | 1.9.0 |  | Yes |
-| [no-attrfn](#frogeducationjquery-compatno-attrfn) | 1.8.0 | (no fix; must rewrite) | 1.9.0 |  | Yes |
+| [no-attrfn](#frogeducationjquery-compatno-attrfn) | 1.8.0 | (must rewrite) | 1.9.0 |  | Yes |
 | [no-box-model](#frogeducationjquery-compatno-box-model) | 1.3.0 | 1.0.0 | 1.8.0 |  | Yes |
 | [no-browser](#frogeducationjquery-compatno-browser) | 1.3.0 | 1.0.0 | 1.9.0 |  | Yes |
 | [no-buildFragment](#frogeducationjquery-compatno-buildFragment) | 1.8.0 | 1.0.0 | 1.8.0 |  | Yes |
 | [no-capitalised-html-data-attributes](#frogeducationjquery-compatno-capitalised-html-data-attributes) | 3.0.0 | 1.0.0 | 3.0.0 | Yes | Yes |
-| [no-clean](#frogeducationjquery-compatno-clean) | 1.9.0 | (no fix; must rewrite) | 1.9.0 |  | Yes |
+| [no-clean](#frogeducationjquery-compatno-clean) | 1.9.0 | (must rewrite) | 1.9.0 |  | Yes |
 | [no-deferred-pipe](#frogeducationjquery-compatno-deferred-pipe) | 1.8.0 | 1.8.0 |  | Yes | Yes |
 | [no-deprecated-event-methods](#frogeducationjquery-compatno-deprecated-event-methods) | 1.8.0 | 1.7.0 | 3.0.0 | Yes | Yes |
 | [no-die](#frogeducationjquery-compatno-die) | 1.7.0 | 1.7.0 | 1.9.0 |  | Yes |
 | [no-document-on-ready](#frogeducationjquery-compatno-document-on-ready) | 1.8.0 | 1.0.0 |  | Yes | Yes |
-| [no-fn-data-events](#frogeducationjquery-compatno-fn-data-events) | 1.9.0 | (no fix; must rewrite) | 1.9.0 |  | Yes |
+| [no-fn-data-events](#frogeducationjquery-compatno-fn-data-events) | 1.9.0 | (must rewrite) | 1.9.0 |  | Yes |
 | [no-fn-size](#frogeducationjquery-compatno-fn-size) | 1.8.0 | 1.0.0 | 3.0.0 | Yes | Yes |
-| [no-global-handle](#frogeducationjquery-compatno-global-handle) | 1.7.0 | (no fix; must rewrite) | 1.9.0 |  | Yes |
-| [no-global-trigger](#frogeducationjquery-compatno-global-trigger) | 1.9.0 | (no fix; must rewrite) | 1.9.0 |  | Yes |
+| [no-global-handle](#frogeducationjquery-compatno-global-handle) | 1.7.0 | (must rewrite) | 1.9.0 |  | Yes |
+| [no-global-trigger](#frogeducationjquery-compatno-global-trigger) | 1.9.0 | (must rewrite) | 1.9.0 |  | Yes |
 | [no-hover-event](#frogeducationjquery-compatno-hover-event) | 1.8.0 | 1.0.0 | 1.9.0 | Yes | Yes |
 | [no-live](#frogeducationjquery-compatno-live) | 1.7.0 | 1.7.0 | 1.9.0 | Yes | Yes |
 | [no-parse-json](#frogeducationjquery-compatno-parse-json) | 3.0.0 | 1.0.0 |  | Yes | Yes |
 | [no-scoped-ajax-events](#frogeducationjquery-compatno-scoped-ajax-events) | 1.9.0 | 1.0.0 | 1.9.0 |  | Yes |
 | [no-sub](#frogeducationjquery-compatno-sub) | 1.7.0 | 1.0.0 | 1.9.0 |  | Yes |
-| [no-swap](#frogeducationjquery-compatno-swap) | 1.9.0 | (no fix; must rewrite) |  |  | Yes |
+| [no-swap](#frogeducationjquery-compatno-swap) | 1.9.0 | (must rewrite) |  |  | Yes |
 | [no-toggle-handler](#frogeducationjquery-compatno-toggle-handler) | 1.8.0 | 1.0.0 | 1.9.0 |  | Yes |
 | [no-trailing-text-in-html-strings](#frogeducationjquery-compatno-trailing-text-in-html-strings) | 1.9.0 | 1.0.0 | 1.9.0 |  | Yes |
 | [quoted-hash-attribute-selectors](#frogeducationjquery-compatquoted-hash-attribute-selectors) | 1.11.0 | 1.0.0 | 1.11.0 | Yes | Yes |
