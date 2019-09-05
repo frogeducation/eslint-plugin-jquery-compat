@@ -81,7 +81,30 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
 #### [@frogeducation/jquery-compat/no-capitalised-html-data-attributes](docs/rules/no-capitalised-html-data-attributes.md)
 
-JQMIGRATE: jQuery.data() always sets/gets camelCased names
+<details>
+  <summary>JQMIGRATE: jQuery.data() always sets/gets camelCased names</summary>
+
+  Data attribute capitalisation is now standardised in jQuery; only
+  word-boundaries in kebab-cased HTML data attributes are respected.
+  
+  Keeping HTML data attributes lowercased avoids confusion.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $('<div data-helloWorld="no" />').data('helloWorld') // --> undefined
+  $('<div data-helloWorld="no" />').data('helloworld') // --> "no"
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $('<div data-hello-world="yes" />')
+  ```
+
+  Further reading:
+  - [`.data()`](https://api.jquery.com/data/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -825,7 +848,38 @@ JQMIGRATE: `jQuery.attrFn` is deprecated
 
 #### [@frogeducation/jquery-compat/no-browser](docs/rules/no-browser.md)
 
-JQMIGRATE: jQuery.browser is deprecated
+<details>
+  <summary>JQMIGRATE: jQuery.browser is deprecated</summary>
+
+  jQuery.browser was deprecated in version 1.3, and finally removed in 1.9.
+  Browser sniffing is notoriously unreliable as means of detecting whether to
+  implement particular features.
+  
+  Where possible, use feature detection to make code decisions rather
+  than trying to detect a specific browser. The Modernizr library provides a wide
+  variety of feature detections. As a last resort, you can directly look at the
+  navigator.userAgent string to detect specific strings returned by the browser.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  if (!$.browser.msie) {
+    console.log("supported!")
+  }
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  if (window.someFeature) {
+    console.log("supported!")
+  }
+  ```
+
+  Further reading:
+  - [JQMIGRATE: jQuery.browser is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jquerybrowser-is-deprecated)
+  - [`jQuery.browser`](https://api.jquery.com/jQuery.browser)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1110,7 +1164,33 @@ JQMIGRATE: jQuery.clean() is deprecated
 
 #### [@frogeducation/jquery-compat/no-deferred-pipe](docs/rules/no-deferred-pipe.md)
 
-JQMIGRATE: deferred.pipe() is deprecated
+<details>
+  <summary>JQMIGRATE: deferred.pipe() is deprecated</summary>
+
+  The .pipe() method on a jQuery.Deferred object was deprecated as of jQuery 1.8,
+  when the .then() method was changed to perform the same function.
+  
+  In most cases it is sufficient to change all occurrences of .pipe() to .then().
+  Ensure that you aren't relying on context/state propagation (e.g., using this) or synchronous callback invocation, which were dropped from .then() for Promises/A+ interoperability as of jQuery 3.0.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.Deferred().pipe(fn)
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $.Deferred().then(fn)
+  ```
+
+  Further reading:
+  - [JQMIGRATE: deferred.pipe() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-deferredpipe-is-deprecated)
+  - [Deferred Object](https://api.jquery.com/category/deferred-object/)
+  - [`deferred.pipe()`](https://api.jquery.com/deferred.pipe/)
+  - [`deferred.then()`](https://api.jquery.com/deferred.then/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1164,7 +1244,48 @@ JQMIGRATE: deferred.pipe() is deprecated
 
 #### [@frogeducation/jquery-compat/no-deprecated-event-methods](docs/rules/no-deprecated-event-methods.md)
 
-JQMIGRATE: jQuery.fn.error() is deprecated
+<details>
+  <summary>JQMIGRATE: jQuery.fn.error() is deprecated</summary>
+
+  Many shortcut methods for attaching certain event handlers to elements were
+  deprecated in jQuery 1.8/1.9, such as `$.fn.load`, `$.fn.error`, etc.
+  
+  For most cases, simply changing the code to use `$.fn.on('<event>', handler)`
+  instead will suffice, eg
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $('.foo').error(handler)
+  $('.foo').find('.bar').error(handler)
+  jQuery('.foo').error(handler)
+  $foo.error(handler)
+  
+  $('.foo').load(handler)
+  $('.foo').unload(handler)
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $('.foo').on('error', handler)
+  $('.foo').find('.bar').on('error', handler)
+  jQuery('.foo').on('error', handler)
+  $foo.on('error', handler)
+  
+  $('.foo').on('load', handler)
+  $('.foo').on('unload', handler)
+  ```
+
+  Further reading:
+  - [JQMIGRATE: jQuery.fn.error() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfnerror-is-deprecated)
+  - [JQMIGRATE: jQuery.fn.load() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfnload-is-deprecated)
+  - [JQMIGRATE: jQuery.fn.unload() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfnunload-is-deprecated)
+  - [`.error()`](https://api.jquery.com/error/)
+  - [`.load()`](https://api.jquery.com/load/)
+  - [`.unload()`](https://api.jquery.com/unload/)
+  - [`.on()`](https://api.jquery.com/on/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1222,7 +1343,27 @@ JQMIGRATE: jQuery.fn.error() is deprecated
 
 #### [@frogeducation/jquery-compat/no-die](docs/rules/no-die.md)
 
-JQMIGRATE: jQuery.fn.die() is deprecated
+<details>
+  <summary>JQMIGRATE: jQuery.fn.die() is deprecated</summary>
+
+  `.die()` was removed in jQuery 1.9 - use `.off()` instead.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $('.something').die('click')
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $('body').off('click', '.something')
+  ```
+
+  Further reading:
+  - [`.die()`](https://api.jquery.com/die/)
+  - [`.off()`](https://api.jquery.com/off/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1375,7 +1516,47 @@ JQMIGRATE: 'ready' event is deprecated
 
 #### [@frogeducation/jquery-compat/no-fn-data-events](docs/rules/no-fn-data-events.md)
 
-JQMIGRATE: Use of jQuery.fn.data('events') is deprecated
+<details>
+  <summary>JQMIGRATE: Use of jQuery.fn.data('events') is deprecated</summary>
+
+  Prior to 1.9, .data("events") could be used to retrieve jQuery's undocumented
+  internal event data structure for an element if no other code had defined a data
+  element with the name "events". This special case has been removed in 1.9.
+  
+  There is no public interface to retrieve this internal data structure, and it
+  remains undocumented. The only useful applications might be for debugging. The
+  data is available via jQuery.\_data("events") but this is not a documented
+  interface.
+  
+  If this rule is flagging up code where an element is known to have custom data
+  with the name "events", either use a different name to avoid confusion, or
+  disable the rule for that particular piece of code:
+  
+  ```js
+  $('.foo').data('events', 'my-custom-event-data')
+  
+  // ...snip...
+  
+  // eslint-disable-next-line jquery-compat/no-fn-data-events
+  var customEventData = $('.foo').data('events')
+  ```
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $('.foo').data('events')
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $('.foo').data('custom-events')
+  ```
+
+  Further reading:
+  - [JQMIGRATE: Use of jQuery.fn.data('events') is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-use-of-jqueryfndataevents-is-deprecated)
+  - [`.data()`](https://api.jquery.com/data/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1470,7 +1651,32 @@ JQMIGRATE: Use of jQuery.fn.data('events') is deprecated
 
 #### [@frogeducation/jquery-compat/no-fn-size](docs/rules/no-fn-size.md)
 
-JQMIGRATE: jQuery.fn.size() is deprecated; use the .length property
+<details>
+  <summary>JQMIGRATE: jQuery.fn.size() is deprecated; use the .length property</summary>
+
+  The .size() method returns the number of elements in the current jQuery object,
+  but duplicates the more-efficient .length property which provides the same
+  functionality. As of jQuery 1.9 the .length property is the preferred way to
+  retrieve this value.
+  
+  Solution: Replace any use of .size() with .length.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $('.foo').size()
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $('.foo').length
+  ```
+
+  Further reading:
+  - [JQMIGRATE: jQuery.fn.size() is deprecated; use the .length property](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfnsize-is-deprecated-use-the-length-property)
+  - [`.size()`](https://api.jquery.com/size)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1850,7 +2056,27 @@ JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'
 
 #### [@frogeducation/jquery-compat/no-live](docs/rules/no-live.md)
 
-JQMIGRATE: jQuery.fn.live() is deprecated
+<details>
+  <summary>JQMIGRATE: jQuery.fn.live() is deprecated</summary>
+
+  `.live()` was removed in jQuery 1.9 - use `.on()` instead.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $('.something').live('click', function() {})
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $('body').on('click', '.something', function() {})
+  ```
+
+  Further reading:
+  - [`.on()`](https://api.jquery.com/on/)
+  - [`.live()`](https://api.jquery.com/live/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -1908,7 +2134,39 @@ JQMIGRATE: jQuery.fn.live() is deprecated
 
 #### [@frogeducation/jquery-compat/no-parse-json](docs/rules/no-parse-json.md)
 
-JQMIGRATE: jQuery.parseJSON requires a valid JSON string
+<details>
+  <summary>JQMIGRATE: jQuery.parseJSON requires a valid JSON string</summary>
+
+  As of jQuery 1.9+ `$.parseJSON` is identical to native `JSON.parse` and will not
+  attempt to "fix" invalid JSON.
+  
+  To retain the old behaviour and "fix" invalid falsy behaviour, use:
+  
+  ```js
+  JSON.parse(input || 'null')
+  ```
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.parseJSON(input)
+  ```
+  ```js
+  jQuery.parseJSON(input)
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  JSON.parse(input)
+  ```
+  ```js
+  JSON.parse(input || 'null')
+  ```
+
+  Further reading:
+  - [`jQuery.parseJSON()`](http://api.jquery.com/jQuery.parseJSON/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -2288,7 +2546,40 @@ JQMIGRATE: jQuery.swap() is undocumented and deprecated
 
 #### [@frogeducation/jquery-compat/no-toggle-handler](docs/rules/no-toggle-handler.md)
 
-JQMIGRATE: `jQuery.fn.toggle(handler, handler...)` is deprecated
+<details>
+  <summary>JQMIGRATE: `jQuery.fn.toggle(handler, handler...)` is deprecated</summary>
+
+  There are two completely different meanings for the .toggle() method. The use of
+  .toggle() to show or hide elements is not affected. The use of .toggle() as a
+  specialized click handler was deprecated in 1.8 and removed in 1.9.
+  
+  Rewrite the code that depends on $().toggle(), use the minified production
+  version of the jQuery Migrate plugin to provide the functionality, or extract
+  the $().toggle() method from the plugin's source and use it in the application.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $('.foo').toggle(function() {
+    console.log('.foo first click handler')
+  }, function() {
+    console.log('.foo second click handler')
+  })
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $('.foo').toggle(1000, function() {
+    console.log('.foo animation done')
+  })
+  ```
+
+  Further reading:
+  - [JQMIGRATE: jQuery.fn.toggle(handler, handler...) is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfntogglehandler-handler-is-deprecated)
+  - [`.toggle() (event)`](https://api.jquery.com/toggle-event/)
+  - [`.toggle() (animation)`](https://api.jquery.com/toggle/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -2383,7 +2674,54 @@ JQMIGRATE: `jQuery.fn.toggle(handler, handler...)` is deprecated
 
 #### [@frogeducation/jquery-compat/no-trailing-text-in-html-strings](docs/rules/no-trailing-text-in-html-strings.md)
 
-JQMIGRATE: `$(html)` text after last tag is ignored
+<details>
+  <summary>JQMIGRATE: `$(html)` text after last tag is ignored</summary>
+
+  HTML strings passed to $() should begin and end with tags. Any text following
+  the last tag is ignored. When upgrading to jQuery 1.9 and using $.parseHTML(),
+  note that leading or trailing text is not ignored, and those text nodes will be
+  part of the data returned.
+  
+  Usually this warning is due to an error in the HTML string, where text is
+  present when it should not be there. Remove the leading or trailing text before
+  passing the string to $.parseHTML() if it should not be part of the collection.
+  Alternatively you can use $($.parseHTML(html)).filter("\*") to remove all
+  top-level text nodes from the set and leave only elements.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $('<h1>foo</h1>bar')
+  ```
+  ```js
+  $('<h1>foo</h1>' + 'bar')
+  ```
+  ```js
+  var text = '<h1>foo</h1>bar'
+  $(text)
+  ```
+  ```js
+  var text = '<h1>foo</h1>' + 'bar'
+  $(text)
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $('<h1>foo</h1>')
+  ```
+  ```js
+  $('<h1>foo</h1>' + '<h2>bar</h2>')
+  ```
+  ```js
+  var text = '<h1>foo</h1>'
+  $(text)
+  ```
+
+  Further reading:
+  - [JQMIGRATE: $(html) text after last tag is ignored](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-html-text-after-last-tag-is-ignored)
+  - [`.html()`](http://api.jquery.com/html/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
@@ -2478,7 +2816,42 @@ JQMIGRATE: `$(html)` text after last tag is ignored
 
 #### [@frogeducation/jquery-compat/quoted-hash-attribute-selectors](docs/rules/quoted-hash-attribute-selectors.md)
 
-JQMIGRATE: Attribute selector with '#' must be quoted
+<details>
+  <summary>JQMIGRATE: Attribute selector with '#' must be quoted</summary>
+
+  Selectors such as a[href=#main] are not valid CSS syntax because the value
+  contains special characters that are not quoted. Until jQuery 1.11.3/2.1.4 this
+  was accepted, but the behavior is non-standard and was never documented. In
+  later versions this selector throws an error. In some cases with complex
+  selectors, Migrate may not attempt a repair. In those cases a fatal error will
+  be logged on the console and you will need to fix the selector manually.
+  
+  Put quotes around any attribute values that have special characters, e.g.
+  a[href="#main"]. The warning message contains the selector that caused the
+  problem, use that to find the selector in the source files.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $('[href=#main]')
+  ```
+  ```js
+  var selector = '[href=#main']
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $('[href="#main"]')
+  ```
+  ```js
+  var selector = '[href="#main"]'
+  ```
+
+  Further reading:
+  - [JQMIGRATE: Attribute selector with '#' must be quote](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-attribute-selector-with--must-be-quoted)
+  - [Attribute Selectors](https://api.jquery.com/category/selectors/attribute-selectors/)
+</details>
 
 | deprecated from | fixable from | removed at | supports `--fix` |
 | ---- | ---- | ---- | ---- |
