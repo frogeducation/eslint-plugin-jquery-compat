@@ -14,7 +14,7 @@ const renderRuleTitle = filename =>
     `[@frogeducation/jquery-compat/${filename}](docs/rules/${filename}.md)` :
     `@frogeducation/jquery-compat/${filename}`
 
-const renderDetail = (title, detail) => {
+const renderDetail = (title, detail, suffix) => {
   if (!detail) { return '\n' + title + '\n' }
 
   const { body, examples: { correct, incorrect }, links} = detail
@@ -37,6 +37,7 @@ const renderDetail = (title, detail) => {
   ${renderExamples(correct).split('\n').join('\n  ')}
   \`\`\`
 ${renderLinks(links)}
+${suffix}
 </details>
 `
 }
@@ -55,7 +56,21 @@ const renderLinks = links => {
   - ${links.join('\n  - ')}`
 }
 
-const result = glob.sync(path.join(__dirname, rulesDir, '**', '*.js'))
+const renderTags = (tags, fixFrom) => `<details>
+  <summary>Included in ${resolveTags({tags, fixFrom}).length} configs</summary>
+
+  - ${resolveTags({tags, fixFrom}).join('\n  - ')}
+</details>`
+
+const renderTable = rules => `
+| rule | deprecated from | fixable from | removed at | supports \`--fix\` |
+| ---- | ---- | ---- | ---- | ---- |
+${rules.map(({ meta: { docs: { deprecated, removed, fixFrom }, fixable }, [FILENAME]: filename }) =>
+  `| [${filename}](#frogeducationjquery-compat${filename.replace('/', '')}) | ${deprecated || removed || '(not yet deprecated)'} | ${ (fixFrom && semver.satisfies(fixFrom, '>=1.0.0')) ? fixFrom : '(no fix provided; must rewrite)' } | ${ removed || '(not yet removed)' } | ${ fixable ? 'Yes' : 'No' } |`  
+).join('\n')}
+`
+
+const rules = glob.sync(path.join(__dirname, rulesDir, '**', '*.js'))
   .map(filename => path.relative(__dirname, filename).slice(rulesDir.length + 1))
   .sort()
   .map(filename =>
@@ -66,6 +81,8 @@ const result = glob.sync(path.join(__dirname, rulesDir, '**', '*.js'))
       .reduce((left, right) => ({ ...left, ...right }))
   )
   .filter(rule => rule.meta)
+
+const result = rules
   .map(({
     meta: {
       docs: {
@@ -81,15 +98,8 @@ const result = glob.sync(path.join(__dirname, rulesDir, '**', '*.js'))
     [FILENAME]: filename
   }) => {
     const copy = `#### ${renderRuleTitle(filename)}
-${renderDetail(description, detail)}
-| deprecated from | fixable from | removed at | supports \`--fix\` |
-| ---- | ---- | ---- | ---- |
-| ${deprecated || removed || '(not yet deprecated)'} | ${ (fixFrom && semver.satisfies(fixFrom, '>=1.0.0')) ? fixFrom : '(no fix provided; must rewrite)' } | ${ removed || '(not yet removed)' } | ${ fixable ? 'Yes' : 'No' } |
-<details>
-  <summary>Included in ${resolveTags({ tags, fixFrom }).length} configs</summary>
-
-  - ${resolveTags({ tags, fixFrom }).join('\n  - ')}
-</details>`;
+${renderDetail(description, detail, renderTags(tags, fixFrom))}
+`;
 
     return tags.map(tag => [ tag, copy ])
   })
@@ -107,9 +117,13 @@ const SUPPORTED_RULES = Object.keys(result)
 ${result[key].join('\n\n')}`)
   .join('\n\n')
 
-const built = fs.readFileSync(path.join(__dirname, 'readme-template.md'))
-  .toString()
-  .replace('%%%SUPPORTED_RULES%%%', SUPPORTED_RULES)
+const SUPPORTED_RULES_TABLE = renderTable(rules)
+
+const template = fs.readFileSync(path.join(__dirname, 'readme-template.md'))
+  .toString();
+
+const built = Object.entries({ SUPPORTED_RULES, SUPPORTED_RULES_TABLE })
+  .reduce((acc, [ key, value ]) => acc.replace(`%%%${key}%%%`, value), template)
 
 fs.writeFileSync(
   path.join(__dirname, '..', 'README.md'),

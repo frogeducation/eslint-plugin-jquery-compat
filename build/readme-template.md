@@ -77,6 +77,8 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
 ## Supported Rules
 
+%%%SUPPORTED_RULES_TABLE%%%
+
 %%%SUPPORTED_RULES%%%
 
 ## Contributing

@@ -77,6 +77,41 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
 ## Supported Rules
 
+
+| rule | deprecated from | fixable from | removed at | supports `--fix` |
+| ---- | ---- | ---- | ---- | ---- |
+| [attr-select](#frogeducationjquery-compatattr-select) | 1.9.0 | 1.6.0 | 1.9.0 | Yes |
+| [deferred-use-state](#frogeducationjquery-compatdeferred-use-state) | 1.7.0 | 1.7.0 | 1.8.0 | Yes |
+| [html-string-must-start-with-tag](#frogeducationjquery-compathtml-string-must-start-with-tag) | 1.9.0 | 1.0.0 | 1.9.0 | No |
+| [jmvc/no-hover-event](#frogeducationjquery-compatjmvcno-hover-event) | 1.8.0 | 1.0.0 | 1.9.0 | No |
+| [jmvc/no-trailing-comma-after-selector](#frogeducationjquery-compatjmvcno-trailing-comma-after-selector) | 1.9.0 | 1.0.0 | 1.9.0 | Yes |
+| [no-andself](#frogeducationjquery-compatno-andself) | 1.8.0 | 1.8.0 | 3.0.0 | Yes |
+| [no-attr-value](#frogeducationjquery-compatno-attr-value) | 1.9.0 | 1.6.0 | 1.9.0 | No |
+| [no-attrfn](#frogeducationjquery-compatno-attrfn) | 1.8.0 | (no fix provided; must rewrite) | 1.9.0 | No |
+| [no-box-model](#frogeducationjquery-compatno-box-model) | 1.3.0 | 1.0.0 | 1.8.0 | No |
+| [no-browser](#frogeducationjquery-compatno-browser) | 1.3.0 | 1.0.0 | 1.9.0 | No |
+| [no-buildFragment](#frogeducationjquery-compatno-buildFragment) | 1.8.0 | 1.0.0 | 1.8.0 | No |
+| [no-capitalised-html-data-attributes](#frogeducationjquery-compatno-capitalised-html-data-attributes) | 3.0.0 | 1.0.0 | 3.0.0 | Yes |
+| [no-clean](#frogeducationjquery-compatno-clean) | 1.9.0 | (no fix provided; must rewrite) | 1.9.0 | No |
+| [no-deferred-pipe](#frogeducationjquery-compatno-deferred-pipe) | 1.8.0 | 1.8.0 | (not yet removed) | Yes |
+| [no-deprecated-event-methods](#frogeducationjquery-compatno-deprecated-event-methods) | 1.8.0 | 1.7.0 | 3.0.0 | Yes |
+| [no-die](#frogeducationjquery-compatno-die) | 1.7.0 | 1.7.0 | 1.9.0 | No |
+| [no-document-on-ready](#frogeducationjquery-compatno-document-on-ready) | 1.8.0 | 1.0.0 | (not yet removed) | Yes |
+| [no-fn-data-events](#frogeducationjquery-compatno-fn-data-events) | 1.9.0 | (no fix provided; must rewrite) | 1.9.0 | No |
+| [no-fn-size](#frogeducationjquery-compatno-fn-size) | 1.8.0 | 1.0.0 | 3.0.0 | Yes |
+| [no-global-handle](#frogeducationjquery-compatno-global-handle) | 1.7.0 | (no fix provided; must rewrite) | 1.9.0 | No |
+| [no-global-trigger](#frogeducationjquery-compatno-global-trigger) | 1.9.0 | (no fix provided; must rewrite) | 1.9.0 | No |
+| [no-hover-event](#frogeducationjquery-compatno-hover-event) | 1.8.0 | 1.0.0 | 1.9.0 | Yes |
+| [no-live](#frogeducationjquery-compatno-live) | 1.7.0 | 1.7.0 | 1.9.0 | Yes |
+| [no-parse-json](#frogeducationjquery-compatno-parse-json) | 3.0.0 | 1.0.0 | (not yet removed) | Yes |
+| [no-scoped-ajax-events](#frogeducationjquery-compatno-scoped-ajax-events) | 1.9.0 | 1.0.0 | 1.9.0 | No |
+| [no-sub](#frogeducationjquery-compatno-sub) | 1.7.0 | 1.0.0 | 1.9.0 | No |
+| [no-swap](#frogeducationjquery-compatno-swap) | 1.9.0 | (no fix provided; must rewrite) | (not yet removed) | No |
+| [no-toggle-handler](#frogeducationjquery-compatno-toggle-handler) | 1.8.0 | 1.0.0 | 1.9.0 | No |
+| [no-trailing-text-in-html-strings](#frogeducationjquery-compatno-trailing-text-in-html-strings) | 1.9.0 | 1.0.0 | 1.9.0 | No |
+| [quoted-hash-attribute-selectors](#frogeducationjquery-compatquoted-hash-attribute-selectors) | 1.11.0 | 1.0.0 | 1.11.0 | Yes |
+
+
 ### v3.0
 
 #### [@frogeducation/jquery-compat/no-capitalised-html-data-attributes](docs/rules/no-capitalised-html-data-attributes.md)
@@ -104,11 +139,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
   Further reading:
   - [`.data()`](https://api.jquery.com/data/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 3.0.0 | 1.0.0 | 3.0.0 | Yes |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -196,6 +226,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 ### v1.9
 
@@ -236,11 +269,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - [JQMIGRATE: `jQuery.fn.attr('selected')` might use property instead of attribute](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfnattrselected-might-use-property-instead-of-attribute)
   - [`.attr`](http://api.jquery.com/attr/)
   - [`.prop`](http://api.jquery.com/prop/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.9.0 | 1.6.0 | 1.9.0 | Yes |
 <details>
   <summary>Included in 52 configs</summary>
 
@@ -297,6 +325,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/deferred-use-state](docs/rules/deferred-use-state.md)
 
@@ -335,11 +366,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - [`deferred.state()`](https://api.jquery.com/deferred.state/)
   - [`deferred.isRejected()`](https://api.jquery.com/deferred.isRejected/)
   - [`deferred.isResolved()`](https://api.jquery.com/deferred.isResolved/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.7.0 | 1.7.0 | 1.8.0 | Yes |
 <details>
   <summary>Included in 46 configs</summary>
 
@@ -390,6 +416,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/html-string-must-start-with-tag
 
@@ -418,11 +447,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [JQMIGRATE: `$(html)` HTML strings must start with '<' character](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-html-html-strings-must-start-with--character)
   - [$.parseHTML](https://api.jquery.com/jQuery.parseHTML)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.9.0 | 1.0.0 | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -510,6 +534,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-andself](docs/rules/no-andself.md)
 
@@ -537,11 +564,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - [JQMIGRATE: jQuery.fn.andSelf() replaced by jQuery.fn.addBack()](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfnandself-replaced-by-jqueryfnaddback)
   - [`.andSelf()`](https://api.jquery.com/andself/)
   - [`.addBack()`](https://api.jquery.com/addback/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.8.0 | 1.8.0 | 3.0.0 | Yes |
 <details>
   <summary>Included in 42 configs</summary>
 
@@ -588,6 +610,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-attr-value](docs/rules/no-attr-value.md)
 
@@ -623,11 +648,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   $('div.bar').prop('value', 'newValue')
   ```
 
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.9.0 | 1.6.0 | 1.9.0 | No |
 <details>
   <summary>Included in 52 configs</summary>
 
@@ -684,6 +704,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/no-attrfn
 
@@ -708,11 +731,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
   Further reading:
   - [JQMIGRATE: `jQuery.attrFn` is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryattrfn-is-deprecated)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.8.0 | (no fix provided; must rewrite) | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -800,6 +818,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-box-model](docs/rules/no-box-model.md)
 
@@ -834,11 +855,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [JQMIGRATE: jQuery.support.boxModel is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jquerysupportboxmodel-is-deprecated)
   - [`jQuery.boxModel`](https://api.jquery.com/jQuery.boxModel/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.3.0 | 1.0.0 | 1.8.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -926,6 +942,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-browser](docs/rules/no-browser.md)
 
@@ -960,11 +979,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [JQMIGRATE: jQuery.browser is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jquerybrowser-is-deprecated)
   - [`jQuery.browser`](https://api.jquery.com/jQuery.browser)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.3.0 | 1.0.0 | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -1052,6 +1066,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/no-buildFragment
 
@@ -1076,11 +1093,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
   Further reading:
   - [JQMIGRATE: jQuery.buildFragment() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryclean-is-deprecated)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.8.0 | 1.0.0 | 1.8.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -1168,6 +1180,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/no-clean
 
@@ -1192,11 +1207,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
   Further reading:
   - [JQMIGRATE: jQuery.clean() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryclean-is-deprecated)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.9.0 | (no fix provided; must rewrite) | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -1284,6 +1294,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-deferred-pipe](docs/rules/no-deferred-pipe.md)
 
@@ -1313,11 +1326,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - [Deferred Object](https://api.jquery.com/category/deferred-object/)
   - [`deferred.pipe()`](https://api.jquery.com/deferred.pipe/)
   - [`deferred.then()`](https://api.jquery.com/deferred.then/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.8.0 | 1.8.0 | (not yet removed) | Yes |
 <details>
   <summary>Included in 42 configs</summary>
 
@@ -1364,6 +1372,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-deprecated-event-methods](docs/rules/no-deprecated-event-methods.md)
 
@@ -1408,11 +1419,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - [`.load()`](https://api.jquery.com/load/)
   - [`.unload()`](https://api.jquery.com/unload/)
   - [`.on()`](https://api.jquery.com/on/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.8.0 | 1.7.0 | 3.0.0 | Yes |
 <details>
   <summary>Included in 46 configs</summary>
 
@@ -1463,6 +1469,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-die](docs/rules/no-die.md)
 
@@ -1486,11 +1495,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [`.die()`](https://api.jquery.com/die/)
   - [`.off()`](https://api.jquery.com/off/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.7.0 | 1.7.0 | 1.9.0 | No |
 <details>
   <summary>Included in 46 configs</summary>
 
@@ -1541,6 +1545,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/no-document-on-ready
 
@@ -1566,11 +1573,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   $(callback)
   ```
 
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.8.0 | 1.0.0 | (not yet removed) | Yes |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -1658,6 +1660,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-fn-data-events](docs/rules/no-fn-data-events.md)
 
@@ -1701,11 +1706,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [JQMIGRATE: Use of jQuery.fn.data('events') is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-use-of-jqueryfndataevents-is-deprecated)
   - [`.data()`](https://api.jquery.com/data/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.9.0 | (no fix provided; must rewrite) | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -1793,6 +1793,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-fn-size](docs/rules/no-fn-size.md)
 
@@ -1821,11 +1824,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [JQMIGRATE: jQuery.fn.size() is deprecated; use the .length property](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfnsize-is-deprecated-use-the-length-property)
   - [`.size()`](https://api.jquery.com/size)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.8.0 | 1.0.0 | 3.0.0 | Yes |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -1913,6 +1911,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/no-global-handle
 
@@ -1938,11 +1939,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [JQMIGRATE: jQuery.event.handle is undocumented and deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryeventhandle-is-undocumented-and-deprecated)
   - [`.trigger`](http://api.jquery.com/trigger/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.7.0 | (no fix provided; must rewrite) | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -2030,6 +2026,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/no-global-trigger
 
@@ -2052,11 +2051,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   (none provided)
   ```
 
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.9.0 | (no fix provided; must rewrite) | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -2144,6 +2138,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/no-hover-event
 
@@ -2179,11 +2176,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - [JQMIGRATE: 'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-hover-pseudo-event-is-deprecated-use-mouseenter-mouseleave)
   - [.hover](https://api.jquery.com/hover/)
   - [.on](https://api.jquery.com/on/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.8.0 | 1.0.0 | 1.9.0 | Yes |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -2271,6 +2263,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-live](docs/rules/no-live.md)
 
@@ -2294,11 +2289,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [`.on()`](https://api.jquery.com/on/)
   - [`.live()`](https://api.jquery.com/live/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.7.0 | 1.7.0 | 1.9.0 | Yes |
 <details>
   <summary>Included in 46 configs</summary>
 
@@ -2349,6 +2339,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-parse-json](docs/rules/no-parse-json.md)
 
@@ -2384,11 +2377,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
   Further reading:
   - [`jQuery.parseJSON()`](http://api.jquery.com/jQuery.parseJSON/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 3.0.0 | 1.0.0 | (not yet removed) | Yes |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -2476,6 +2464,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/no-scoped-ajax-events
 
@@ -2500,11 +2491,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
   Further reading:
   - [JQMIGRATE: AJAX events should be attached to document](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-ajax-events-should-be-attached-to-document)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.9.0 | 1.0.0 | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -2592,6 +2578,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/no-sub
 
@@ -2616,11 +2605,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
   Further reading:
   - [JQMIGRATE: jQuery.sub() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jquerysub-is-deprecated)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.7.0 | 1.0.0 | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -2708,6 +2692,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### @frogeducation/jquery-compat/no-swap
 
@@ -2732,11 +2719,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 
   Further reading:
   - [JQMIGRATE: jQuery.swap() is undocumented and deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryswap-is-undocumented-and-deprecated)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.9.0 | (no fix provided; must rewrite) | (not yet removed) | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -2824,6 +2806,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-toggle-handler](docs/rules/no-toggle-handler.md)
 
@@ -2860,11 +2845,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - [JQMIGRATE: jQuery.fn.toggle(handler, handler...) is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jqueryfntogglehandler-handler-is-deprecated)
   - [`.toggle() (event)`](https://api.jquery.com/toggle-event/)
   - [`.toggle() (animation)`](https://api.jquery.com/toggle/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.8.0 | 1.0.0 | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -2952,6 +2932,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/no-trailing-text-in-html-strings](docs/rules/no-trailing-text-in-html-strings.md)
 
@@ -3002,11 +2985,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [JQMIGRATE: $(html) text after last tag is ignored](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-html-text-after-last-tag-is-ignored)
   - [`.html()`](http://api.jquery.com/html/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.9.0 | 1.0.0 | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -3094,6 +3072,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/quoted-hash-attribute-selectors](docs/rules/quoted-hash-attribute-selectors.md)
 
@@ -3132,11 +3113,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [JQMIGRATE: Attribute selector with '#' must be quote](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-attribute-selector-with--must-be-quoted)
   - [Attribute Selectors](https://api.jquery.com/category/selectors/attribute-selectors/)
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.11.0 | 1.0.0 | 1.11.0 | Yes |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -3224,6 +3200,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 ### jmvc
 
@@ -3255,11 +3234,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   })
   ```
 
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.8.0 | 1.0.0 | 1.9.0 | No |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -3347,6 +3321,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 #### [@frogeducation/jquery-compat/jmvc/no-trailing-comma-after-selector](docs/rules/jmvc/no-trailing-comma-after-selector.md)
 
@@ -3382,11 +3359,6 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   })
   ```
 
-</details>
-
-| deprecated from | fixable from | removed at | supports `--fix` |
-| ---- | ---- | ---- | ---- |
-| 1.9.0 | 1.0.0 | 1.9.0 | Yes |
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -3474,6 +3446,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   - fixable-from-v3.4.0
   - fixable-from-v3.4.1
 </details>
+</details>
+
+
 
 ## Contributing
 
