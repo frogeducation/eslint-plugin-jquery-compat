@@ -1,6 +1,14 @@
 # eslint-plugin-jquery-compat
 > Linting rules for checking jQuery version compatibility
 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Supported rules](#supported-rules)
+  - [v3.0](#v30)
+  - [v1.9](#v19)
+  - [jmvc](#jmvc)
+- [Contributing](#contributing)
+
 ## Installation
 
 You'll first need to install [ESLint](http://eslint.org):
@@ -3455,3 +3463,4 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 - Run tests with `npm run test`
 - Please format commits using the [conventional commit format](https://www.conventionalcommits.org/en/v1.0.0-beta.2/)
 - Releases are handled by [semantic-release](https://github.com/semantic-release/semantic-release) via [travis-ci](.travis.yml)
+- Regenerate this readme by running `node ./build/generate-readme.js`
