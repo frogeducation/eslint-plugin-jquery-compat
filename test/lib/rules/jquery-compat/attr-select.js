@@ -44,6 +44,8 @@ ruleTester.run('jquery-compat/attr-select', rules['attr-select'], {
         code: `$('.div').attr('${property}')`,
         errors: [{
           messageId: 'attr-select',
+          line: 1,
+          column: 11,
           data: {
             getOrSet: 'gets',
             string: property
