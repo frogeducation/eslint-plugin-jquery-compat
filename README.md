@@ -1,4 +1,15 @@
 # eslint-plugin-jquery-compat
+
+<!--- 
+    Hello! Please do not edit 'README.md' directly, it is generated from a 
+    template in build/readme-template.md, via the build/generate-readme.js 
+    script
+    
+    Please make changes in the template, or in rule definitions.
+    
+    Changes made directly in 'README.md' may be accidentally overwritten.
+--->
+
 > Linting rules for checking jQuery version compatibility
 
 - [Installation](#installation)
