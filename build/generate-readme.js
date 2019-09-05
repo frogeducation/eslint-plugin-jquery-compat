@@ -66,7 +66,7 @@ const renderTable = rules => `
 | rule | deprecated | fixable from | removed | \`--fix\` |
 | ---- | ---- | ---- | ---- | ---- |
 ${rules.map(({ meta: { docs: { deprecated, removed, fixFrom }, fixable }, [FILENAME]: filename }) =>
-  `| [${filename}](#frogeducationjquery-compat${filename.replace('/', '')}) | ${deprecated || removed || ''} | ${ (fixFrom && semver.satisfies(fixFrom, '>=1.0.0')) ? fixFrom : '(no fix; must rewrite)' } | ${ removed || '(not yet removed)' } | ${ fixable ? 'Yes' : '' } |`  
+  `| [${filename}](#frogeducationjquery-compat${filename.replace('/', '')}) | ${deprecated || removed || ''} | ${ (fixFrom && semver.satisfies(fixFrom, '>=1.0.0')) ? fixFrom : '(no fix; must rewrite)' } | ${ removed || '' } | ${ fixable ? 'Yes' : '' } |`  
 ).join('\n')}
 `
 
