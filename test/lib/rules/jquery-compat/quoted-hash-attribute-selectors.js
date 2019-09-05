@@ -20,7 +20,9 @@ ruleTester.run('jquery-compat/quoted-hash-attribute-selectors', rules['quoted-ha
     {
       code: '$("[href=#main]")',
       errors: [{
-        messageId: 'quoted-hash-attribute-selectors'
+        messageId: 'quoted-hash-attribute-selectors',
+        line: 1,
+        column: 3
       }],
       output: '$("[href=\'#main\']")'
     },

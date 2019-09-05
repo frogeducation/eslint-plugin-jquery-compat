@@ -17,7 +17,9 @@ ruleTester.run('jquery-compat/no-document-on-ready', rules['no-document-on-ready
     {
       code: '$(document).on("ready", function() {});',
       errors: [{
-        messageId: 'no-document-on-ready'
+        messageId: 'no-document-on-ready',
+        line: 1,
+        column: 13
       }],
       output: '$(document).ready(function() {});'
     },

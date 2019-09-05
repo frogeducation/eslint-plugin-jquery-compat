@@ -20,7 +20,9 @@ ruleTester.run('jquery-compat/no-clean', rules['no-clean'], {
     {
       code: '$.clean()',
       errors: [{
-        messageId: 'no-clean'
+        messageId: 'no-clean',
+        line: 1,
+        column: 3
       }]
     },
     {

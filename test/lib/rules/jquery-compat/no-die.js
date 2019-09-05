@@ -14,7 +14,9 @@ ruleTester.run('jquery-compat/no-die', rules['no-die'], {
     {
       code: '$(".something").die("click")',
       errors: [{
-        messageId: 'no-die'
+        messageId: 'no-die',
+        line: 1,
+        column: 17
       }]
     }
   ]

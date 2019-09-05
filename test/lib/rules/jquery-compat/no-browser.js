@@ -17,7 +17,9 @@ ruleTester.run('jquery-compat/no-browser', rules['no-browser'], {
     {
       code: 'if (!$.browser.msie) console.log("supported")',
       errors: [{
-        messageId: 'no-browser'
+        messageId: 'no-browser',
+        line: 1,
+        column: 8
       }]
     },
     {

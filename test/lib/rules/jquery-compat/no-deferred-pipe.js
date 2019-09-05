@@ -17,7 +17,9 @@ ruleTester.run('jquery-compat/no-deferred-pipe', rules['no-deferred-pipe'], {
     {
       code: '$.Deferred().pipe(fn)',
       errors: [{
-        messageId: 'no-deferred-pipe'
+        messageId: 'no-deferred-pipe',
+        line: 1,
+        column: 14
       }],
       output: '$.Deferred().then(fn)'
     },

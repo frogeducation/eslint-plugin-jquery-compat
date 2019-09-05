@@ -33,6 +33,8 @@ ruleTester.run('jquery-compat/no-deprecated-event-methods', rules['no-deprecated
       code: '$(".foo").error(handler)',
       errors: [{
         messageId: 'no-deprecated-event-methods',
+        line: 1,
+        columns: 11,
         data: {
           fn: 'error'
         }

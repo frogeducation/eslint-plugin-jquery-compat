@@ -33,7 +33,9 @@ ruleTester.run('jquery-compat/no-toggle-handler', rules['no-toggle-handler'], {
     {
       code: '$(".foo").toggle(function() {}, function() {})',
       errors: [{
-        messageId: 'no-toggle-handler'
+        messageId: 'no-toggle-handler',
+        line: 1,
+        column: 11
       }]
     },
     {

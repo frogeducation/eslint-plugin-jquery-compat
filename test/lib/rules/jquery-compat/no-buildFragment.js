@@ -20,7 +20,9 @@ ruleTester.run('jquery-compat/no-buildFragment', rules['no-buildFragment'], {
     {
       code: '$.buildFragment()',
       errors: [{
-        messageId: 'no-buildFragment'
+        messageId: 'no-buildFragment',
+        line: 1,
+        column: 3
       }]
     },
     {

@@ -14,7 +14,9 @@ ruleTester.run('jquery-compat/no-live', rules['no-live'], {
     {
       code: '$(".something").live("click", function() {})',
       errors: [{
-        messageId: 'no-live'
+        messageId: 'no-live',
+        line: 1,
+        column: 17
       }],
       output: '$(".something").on("click", function() {})'
     },

@@ -14,7 +14,9 @@ ruleTester.run('jquery-compat/no-global-handle', rules['no-global-handle'], {
     {
       code: `$.event.handle('event', function() { return; })`,
       errors: [{
-        messageId: 'no-global-handle'
+        messageId: 'no-global-handle',
+        line: 1,
+        column: 9
       }]
     },
     {

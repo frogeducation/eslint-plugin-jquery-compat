@@ -23,7 +23,9 @@ ruleTester.run('jquery-compat/no-fn-size', rules['no-fn-size'], {
     {
       code: '$(".foo").size()',
       errors: [{
-        messageId: 'no-fn-size'
+        messageId: 'no-fn-size',
+        line: 1,
+        column: 11
       }],
       output: '$(".foo").length'
     },

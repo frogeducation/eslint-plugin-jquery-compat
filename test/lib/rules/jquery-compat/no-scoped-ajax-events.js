@@ -24,6 +24,8 @@ ruleTester.run('jquery-compat/no-scoped-ajax-events', rules['no-scoped-ajax-even
         code: `$(document).find("div").${methodName}(function() { return; })`,
         errors: [{
           messageId: 'no-scoped-ajax-events',
+          line: 1,
+          column: 25,
           data: {
             fn: methodName
           }

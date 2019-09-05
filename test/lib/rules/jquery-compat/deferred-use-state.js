@@ -18,6 +18,8 @@ ruleTester.run('jquery-compat/deferred-use-state', rules['deferred-use-state'], 
       code: 'if (deferred.isRejected()) { }',
       errors: [{
         messageId: 'deferred-use-state',
+        line: 1,
+        column: 14,
         data: {
           fn: 'isRejected',
           equivalent: 'rejected'
