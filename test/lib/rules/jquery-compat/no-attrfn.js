@@ -14,7 +14,9 @@ ruleTester.run('jquery-compat/no-attrfn', rules['no-attrfn'], {
     {
       code: '$.attrFn',
       errors: [{
-        messageId: 'no-attrfn'
+        messageId: 'no-attrfn',
+        line: 1,
+        column: 3
       }]
     },
     {

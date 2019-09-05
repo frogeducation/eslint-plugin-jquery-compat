@@ -26,6 +26,8 @@ ruleTester.run('jquery-compat/no-attr-value', rules['no-attr-value'], {
       code: '$("input#my-input").attr("value");',
       errors: [{
         messageId: 'no-attr-value',
+        line: 1,
+        column: 21,
         data: {
           getOrSet: 'gets'
         }

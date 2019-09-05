@@ -21,7 +21,9 @@ ruleTester.run('jquery-compat/html-string-must-start-with-tag', rules['html-stri
       // jquery-migrate trims string before testing, but jquery-actual does not.
       code: '$(" <h1>foo</h1>")',
       errors: [{
-        messageId: 'html-string-must-start-with-tag'
+        messageId: 'html-string-must-start-with-tag',
+        line: 1,
+        column: 3
       }]
     },
     {

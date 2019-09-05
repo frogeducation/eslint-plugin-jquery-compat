@@ -18,6 +18,8 @@ ruleTester.run('jquery-compat/no-box-model', rules['no-box-model'], {
       code: 'if ($.boxModel) console.log("supported!")',
       errors: [{
         messageId: 'no-box-model',
+        line: 1,
+        column: 7,
         data: {
           api: 'boxModel'
         }

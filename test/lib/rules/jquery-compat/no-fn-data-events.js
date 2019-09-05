@@ -17,7 +17,9 @@ ruleTester.run('jquery-compat/no-fn-data-events', rules['no-fn-data-events'], {
     {
       code: '$(".foo").data("events")',
       errors: [{
-        messageId: 'no-fn-data-events'
+        messageId: 'no-fn-data-events',
+        line: 1,
+        column: 11
       }]
     },
     {

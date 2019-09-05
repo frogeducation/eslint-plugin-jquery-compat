@@ -14,7 +14,9 @@ ruleTester.run('jquery-compat/no-parse-json', rules['no-parse-json'], {
     {
       code: 'var data = $.parseJSON(window.__data)',
       errors: [{
-        messageId: 'no-parse-json'
+        messageId: 'no-parse-json',
+        line: 1,
+        column: 14
       }],
       output: 'var data = JSON.parse(window.__data || \'null\')'
     },

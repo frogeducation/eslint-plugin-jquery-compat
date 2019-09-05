@@ -20,7 +20,9 @@ ruleTester.run('jquery-compat/no-hover-event', rules['no-hover-event'], {
     {
       code: '$("input#my-input").on("hover", function() {});',
       errors: [{
-        messageId: 'no-hover-event'
+        messageId: 'no-hover-event',
+        line: 1,
+        column: 24
       }],
       output: '$("input#my-input").on("mouseenter mouseleave", function() {});'
     },
@@ -28,7 +30,9 @@ ruleTester.run('jquery-compat/no-hover-event', rules['no-hover-event'], {
       code: `var event = "hover"
       $("input#my-input").on(event, function() {});`,
       errors: [{
-        messageId: 'no-hover-event'
+        messageId: 'no-hover-event',
+        line: 2,
+        column: 30
       }],
       output: `var event = "hover"
       $("input#my-input").on("mouseenter mouseleave", function() {});`

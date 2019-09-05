@@ -14,7 +14,9 @@ ruleTester.run('jquery-compat/no-global-trigger', rules['no-global-trigger'], {
     {
       code: `$.event.trigger('event')`,
       errors: [{
-        messageId: 'no-global-trigger'
+        messageId: 'no-global-trigger',
+        line: 1,
+        column: 9
       }]
     },
     {

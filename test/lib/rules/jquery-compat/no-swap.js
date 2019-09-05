@@ -20,7 +20,9 @@ ruleTester.run('jquery-compat/no-swap', rules['no-swap'], {
     {
       code: '$.swap($(".example"), { css: "properties" }, function() {})',
       errors: [{
-        messageId: 'no-swap'
+        messageId: 'no-swap',
+        line: 1,
+        column: 3
       }]
     },
     {

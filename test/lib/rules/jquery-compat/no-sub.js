@@ -20,7 +20,9 @@ ruleTester.run('jquery-compat/no-sub', rules['no-sub'], {
     {
       code: '$.sub()',
       errors: [{
-        messageId: 'no-sub'
+        messageId: 'no-sub',
+        line: 1,
+        column: 3
       }]
     },
     {

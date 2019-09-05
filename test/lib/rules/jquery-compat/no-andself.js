@@ -14,7 +14,9 @@ ruleTester.run('jquery-compat/no-andself', rules['no-andself'], {
     {
       code: '$(".foo").find(".bar").andSelf()',
       errors: [{
-        messageId: 'no-andself'
+        messageId: 'no-andself',
+        line: 1,
+        column: 24
       }],
       output: '$(".foo").find(".bar").addBack()'
     }
