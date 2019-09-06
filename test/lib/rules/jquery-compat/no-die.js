@@ -17,7 +17,15 @@ ruleTester.run('jquery-compat/no-die', rules['no-die'], {
         messageId: 'no-die',
         line: 1,
         column: 17
-      }]
+      }],
+      output: '$(".something").off("click")'
+    },
+    {
+      code: '(true ? $(".something") : this.element.model()).die("click", function() {})',
+      errors: [{
+        messageId: 'no-die'
+      }],
+      output: '(true ? $(".something") : this.element.model()).die("click", function() {})'
     }
   ]
 })
