@@ -114,7 +114,7 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 | [no-clean](#frogeducationjquery-compatno-clean) | 1.9.0 | (must rewrite) | 1.9.0 |  | Yes |
 | [no-deferred-pipe](#frogeducationjquery-compatno-deferred-pipe) | 1.8.0 | 1.8.0 |  | Yes | Yes |
 | [no-deprecated-event-methods](#frogeducationjquery-compatno-deprecated-event-methods) | 1.8.0 | 1.7.0 | 3.0.0 | Yes | Yes |
-| [no-die](#frogeducationjquery-compatno-die) | 1.7.0 | 1.7.0 | 1.9.0 |  | Yes |
+| [no-die](#frogeducationjquery-compatno-die) | 1.7.0 | 1.7.0 | 1.9.0 | Yes | Yes |
 | [no-document-on-ready](#frogeducationjquery-compatno-document-on-ready) | 1.8.0 | 1.0.0 |  | Yes | Yes |
 | [no-fn-data-events](#frogeducationjquery-compatno-fn-data-events) | 1.9.0 | (must rewrite) | 1.9.0 |  | Yes |
 | [no-fn-size](#frogeducationjquery-compatno-fn-size) | 1.8.0 | 1.0.0 | 3.0.0 | Yes | Yes |
