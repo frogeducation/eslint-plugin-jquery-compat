@@ -124,7 +124,7 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 | [no-live](#frogeducationjquery-compatno-live) | 1.7.0 | 1.7.0 | 1.9.0 | Yes | Yes |
 | [no-parse-json](#frogeducationjquery-compatno-parse-json) | 3.0.0 | 1.0.0 |  | Yes | Yes |
 | [no-scoped-ajax-events](#frogeducationjquery-compatno-scoped-ajax-events) | 1.9.0 | 1.0.0 | 1.9.0 |  | Yes |
-| [no-sub](#frogeducationjquery-compatno-sub) | 1.7.0 | 1.0.0 | 1.9.0 |  | Yes |
+| [no-sub](#frogeducationjquery-compatno-sub) | 1.7.0 | (must rewrite) | 1.9.0 |  | Yes |
 | [no-swap](#frogeducationjquery-compatno-swap) | 1.9.0 | (must rewrite) |  |  | Yes |
 | [no-toggle-handler](#frogeducationjquery-compatno-toggle-handler) | 1.8.0 | 1.0.0 | 1.9.0 |  | Yes |
 | [no-trailing-text-in-html-strings](#frogeducationjquery-compatno-trailing-text-in-html-strings) | 1.9.0 | 1.0.0 | 1.9.0 |  | Yes |
@@ -2625,91 +2625,9 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [JQMIGRATE: jQuery.sub() is deprecated](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-jquerysub-is-deprecated)
 <details>
-  <summary>Included in 83 configs</summary>
+  <summary>Included in 1 configs</summary>
 
   - v1.9
-  - fixable-from-v1.0.0
-  - fixable-from-v1.0.1
-  - fixable-from-v1.0.2
-  - fixable-from-v1.0.3
-  - fixable-from-v1.0.4
-  - fixable-from-v1.1.0
-  - fixable-from-v1.1.1
-  - fixable-from-v1.1.2
-  - fixable-from-v1.1.3
-  - fixable-from-v1.1.4
-  - fixable-from-v1.2.0
-  - fixable-from-v1.2.1
-  - fixable-from-v1.2.2
-  - fixable-from-v1.2.3
-  - fixable-from-v1.2.4
-  - fixable-from-v1.2.5
-  - fixable-from-v1.2.6
-  - fixable-from-v1.3.0
-  - fixable-from-v1.3.0
-  - fixable-from-v1.3.1
-  - fixable-from-v1.3.2
-  - fixable-from-v1.4.0
-  - fixable-from-v1.4.0
-  - fixable-from-v1.4.1
-  - fixable-from-v1.4.2
-  - fixable-from-v1.4.3
-  - fixable-from-v1.4.4
-  - fixable-from-v1.5.0
-  - fixable-from-v1.5.0
-  - fixable-from-v1.5.1
-  - fixable-from-v1.5.2
-  - fixable-from-v1.6.0
-  - fixable-from-v1.6.0
-  - fixable-from-v1.6.1
-  - fixable-from-v1.6.2
-  - fixable-from-v1.6.3
-  - fixable-from-v1.6.4
-  - fixable-from-v1.7.0
-  - fixable-from-v1.7.0
-  - fixable-from-v1.7.1
-  - fixable-from-v1.7.2
-  - fixable-from-v1.8.0
-  - fixable-from-v1.8.1
-  - fixable-from-v1.8.2
-  - fixable-from-v1.8.3
-  - fixable-from-v1.9.0
-  - fixable-from-v1.9.1
-  - fixable-from-v1.10.0
-  - fixable-from-v1.10.1
-  - fixable-from-v1.10.2
-  - fixable-from-v1.11.0
-  - fixable-from-v1.11.1
-  - fixable-from-v1.11.2
-  - fixable-from-v1.11.3
-  - fixable-from-v1.12.0
-  - fixable-from-v1.12.1
-  - fixable-from-v1.12.2
-  - fixable-from-v1.12.3
-  - fixable-from-v1.12.4
-  - fixable-from-v2.0.0
-  - fixable-from-v2.0.1
-  - fixable-from-v2.0.2
-  - fixable-from-v2.0.3
-  - fixable-from-v2.1.0
-  - fixable-from-v2.1.1
-  - fixable-from-v2.1.2
-  - fixable-from-v2.1.3
-  - fixable-from-v2.1.4
-  - fixable-from-v2.2.0
-  - fixable-from-v2.2.1
-  - fixable-from-v2.2.2
-  - fixable-from-v2.2.3
-  - fixable-from-v2.2.4
-  - fixable-from-v3.0.0
-  - fixable-from-v3.1.0
-  - fixable-from-v3.1.1
-  - fixable-from-v3.2.0
-  - fixable-from-v3.2.1
-  - fixable-from-v3.3.0
-  - fixable-from-v3.3.1
-  - fixable-from-v3.4.0
-  - fixable-from-v3.4.1
 </details>
 </details>
 
