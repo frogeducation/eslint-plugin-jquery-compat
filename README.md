@@ -103,6 +103,7 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 | [deferred-use-state](#frogeducationjquery-compatdeferred-use-state) | 1.7.0 | 1.7.0 | 1.8.0 | Yes | Yes |
 | [html-string-must-start-with-tag](#frogeducationjquery-compathtml-string-must-start-with-tag) | 1.9.0 | 1.0.0 | 1.9.0 |  | Yes |
 | [jmvc/no-hover-event](#frogeducationjquery-compatjmvcno-hover-event) | 1.8.0 | 1.0.0 | 1.9.0 |  |  |
+| [jmvc/no-null-model-calls](#frogeducationjquery-compatjmvcno-null-model-calls) | 1.8.0 | 1.0.0 | 1.8.0 |  | Yes |
 | [jmvc/no-trailing-comma-after-selector](#frogeducationjquery-compatjmvcno-trailing-comma-after-selector) | 1.9.0 | 1.0.0 | 1.9.0 | Yes |  |
 | [no-andself](#frogeducationjquery-compatno-andself) | 1.8.0 | 1.8.0 | 3.0.0 | Yes | Yes |
 | [no-attr-value](#frogeducationjquery-compatno-attr-value) | 1.9.0 | 1.6.0 | 1.9.0 |  | Yes |
@@ -122,6 +123,7 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
 | [no-global-trigger](#frogeducationjquery-compatno-global-trigger) | 1.9.0 | (must rewrite) | 1.9.0 |  | Yes |
 | [no-hover-event](#frogeducationjquery-compatno-hover-event) | 1.8.0 | 1.0.0 | 1.9.0 | Yes | Yes |
 | [no-live](#frogeducationjquery-compatno-live) | 1.7.0 | 1.7.0 | 1.9.0 | Yes | Yes |
+| [no-null-param](#frogeducationjquery-compatno-null-param) | 1.8.0 | 1.0.0 | 1.8.0 |  | Yes |
 | [no-parse-json](#frogeducationjquery-compatno-parse-json) | 3.0.0 | 1.0.0 |  | Yes | Yes |
 | [no-scoped-ajax-events](#frogeducationjquery-compatno-scoped-ajax-events) | 1.9.0 | 1.0.0 | 1.9.0 |  | Yes |
 | [no-sub](#frogeducationjquery-compatno-sub) | 1.7.0 | (must rewrite) | 1.9.0 |  | Yes |
@@ -466,6 +468,124 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   Further reading:
   - [JQMIGRATE: `$(html)` HTML strings must start with '<' character](https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md#jqmigrate-html-html-strings-must-start-with--character)
   - [$.parseHTML](https://api.jquery.com/jQuery.parseHTML)
+<details>
+  <summary>Included in 83 configs</summary>
+
+  - v1.9
+  - fixable-from-v1.0.0
+  - fixable-from-v1.0.1
+  - fixable-from-v1.0.2
+  - fixable-from-v1.0.3
+  - fixable-from-v1.0.4
+  - fixable-from-v1.1.0
+  - fixable-from-v1.1.1
+  - fixable-from-v1.1.2
+  - fixable-from-v1.1.3
+  - fixable-from-v1.1.4
+  - fixable-from-v1.2.0
+  - fixable-from-v1.2.1
+  - fixable-from-v1.2.2
+  - fixable-from-v1.2.3
+  - fixable-from-v1.2.4
+  - fixable-from-v1.2.5
+  - fixable-from-v1.2.6
+  - fixable-from-v1.3.0
+  - fixable-from-v1.3.0
+  - fixable-from-v1.3.1
+  - fixable-from-v1.3.2
+  - fixable-from-v1.4.0
+  - fixable-from-v1.4.0
+  - fixable-from-v1.4.1
+  - fixable-from-v1.4.2
+  - fixable-from-v1.4.3
+  - fixable-from-v1.4.4
+  - fixable-from-v1.5.0
+  - fixable-from-v1.5.0
+  - fixable-from-v1.5.1
+  - fixable-from-v1.5.2
+  - fixable-from-v1.6.0
+  - fixable-from-v1.6.0
+  - fixable-from-v1.6.1
+  - fixable-from-v1.6.2
+  - fixable-from-v1.6.3
+  - fixable-from-v1.6.4
+  - fixable-from-v1.7.0
+  - fixable-from-v1.7.0
+  - fixable-from-v1.7.1
+  - fixable-from-v1.7.2
+  - fixable-from-v1.8.0
+  - fixable-from-v1.8.1
+  - fixable-from-v1.8.2
+  - fixable-from-v1.8.3
+  - fixable-from-v1.9.0
+  - fixable-from-v1.9.1
+  - fixable-from-v1.10.0
+  - fixable-from-v1.10.1
+  - fixable-from-v1.10.2
+  - fixable-from-v1.11.0
+  - fixable-from-v1.11.1
+  - fixable-from-v1.11.2
+  - fixable-from-v1.11.3
+  - fixable-from-v1.12.0
+  - fixable-from-v1.12.1
+  - fixable-from-v1.12.2
+  - fixable-from-v1.12.3
+  - fixable-from-v1.12.4
+  - fixable-from-v2.0.0
+  - fixable-from-v2.0.1
+  - fixable-from-v2.0.2
+  - fixable-from-v2.0.3
+  - fixable-from-v2.1.0
+  - fixable-from-v2.1.1
+  - fixable-from-v2.1.2
+  - fixable-from-v2.1.3
+  - fixable-from-v2.1.4
+  - fixable-from-v2.2.0
+  - fixable-from-v2.2.1
+  - fixable-from-v2.2.2
+  - fixable-from-v2.2.3
+  - fixable-from-v2.2.4
+  - fixable-from-v3.0.0
+  - fixable-from-v3.1.0
+  - fixable-from-v3.1.1
+  - fixable-from-v3.2.0
+  - fixable-from-v3.2.1
+  - fixable-from-v3.3.0
+  - fixable-from-v3.3.1
+  - fixable-from-v3.4.0
+  - fixable-from-v3.4.1
+</details>
+</details>
+
+
+
+#### @frogeducation/jquery-compat/jmvc/no-null-model-calls
+
+<details>
+  <summary>$.param no longer encodes null/undefined</summary>
+
+  **Cause**: `jQuery.param()` (used to build query string parameters in api calls from models) no longer encodes `null` or `undefined` as strings; in stead it encodes them as empty strings.
+  
+  **Solution**: Rewrite any code that passes `null` or `undefined` to model calls to pass these as strings, or omit them, as appropriate.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  Foo.Models.Bar.baz({ foo: null, bar: undefined, baz: 42 })
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  Foo.Models.Bar.baz({ foo: "null", bar: "undefined", baz: 42 })
+  ```
+  ```js
+  Foo.Models.Bar.baz({ baz: 42 })
+  ```
+
+  Further reading:
+  - [This was changed in v1.8.0](https://github.com/jquery/jquery/commit/36d2d9ae937f626d98319ed850905e8d1cbfd078)
+  - [Discussion of the bug](https://bugs.jquery.com/ticket/8653)
 <details>
   <summary>Included in 83 configs</summary>
 
@@ -2312,6 +2432,124 @@ and finally, rules that only apply to [JMVC](http://www.javascriptmvc.com/) user
   <summary>Included in 46 configs</summary>
 
   - v1.9
+  - fixable-from-v1.7.0
+  - fixable-from-v1.7.0
+  - fixable-from-v1.7.1
+  - fixable-from-v1.7.2
+  - fixable-from-v1.8.0
+  - fixable-from-v1.8.1
+  - fixable-from-v1.8.2
+  - fixable-from-v1.8.3
+  - fixable-from-v1.9.0
+  - fixable-from-v1.9.1
+  - fixable-from-v1.10.0
+  - fixable-from-v1.10.1
+  - fixable-from-v1.10.2
+  - fixable-from-v1.11.0
+  - fixable-from-v1.11.1
+  - fixable-from-v1.11.2
+  - fixable-from-v1.11.3
+  - fixable-from-v1.12.0
+  - fixable-from-v1.12.1
+  - fixable-from-v1.12.2
+  - fixable-from-v1.12.3
+  - fixable-from-v1.12.4
+  - fixable-from-v2.0.0
+  - fixable-from-v2.0.1
+  - fixable-from-v2.0.2
+  - fixable-from-v2.0.3
+  - fixable-from-v2.1.0
+  - fixable-from-v2.1.1
+  - fixable-from-v2.1.2
+  - fixable-from-v2.1.3
+  - fixable-from-v2.1.4
+  - fixable-from-v2.2.0
+  - fixable-from-v2.2.1
+  - fixable-from-v2.2.2
+  - fixable-from-v2.2.3
+  - fixable-from-v2.2.4
+  - fixable-from-v3.0.0
+  - fixable-from-v3.1.0
+  - fixable-from-v3.1.1
+  - fixable-from-v3.2.0
+  - fixable-from-v3.2.1
+  - fixable-from-v3.3.0
+  - fixable-from-v3.3.1
+  - fixable-from-v3.4.0
+  - fixable-from-v3.4.1
+</details>
+</details>
+
+
+
+#### @frogeducation/jquery-compat/no-null-param
+
+<details>
+  <summary>$.param no longer encodes null/undefined</summary>
+
+  **Cause**: `jQuery.param()` (used to build query string parameters in `$.ajax`) no longer encodes `null` or `undefined` as strings; in stead it encodes them as empty strings.
+  
+  **Solution**: Rewrite any code that passes `null` or `undefined` to `$.param` or `$.ajax` to pass these as strings, or omit them, as appropriate.
+
+  Examples of **incorrect** code for this rule:
+
+  ```js
+  $.param({ foo: null, bar: undefined, baz: 42 })
+  ```
+  
+  Examples of **correct** code for this rule:
+
+  ```js
+  $.param({ foo: "null", bar: "undefined", baz: 42 })
+  ```
+  ```js
+  $.param({ baz: 42 })
+  ```
+
+  Further reading:
+  - [This was changed in v1.8.0](https://github.com/jquery/jquery/commit/36d2d9ae937f626d98319ed850905e8d1cbfd078)
+  - [Discussion of the bug](https://bugs.jquery.com/ticket/8653)
+<details>
+  <summary>Included in 83 configs</summary>
+
+  - v1.9
+  - fixable-from-v1.0.0
+  - fixable-from-v1.0.1
+  - fixable-from-v1.0.2
+  - fixable-from-v1.0.3
+  - fixable-from-v1.0.4
+  - fixable-from-v1.1.0
+  - fixable-from-v1.1.1
+  - fixable-from-v1.1.2
+  - fixable-from-v1.1.3
+  - fixable-from-v1.1.4
+  - fixable-from-v1.2.0
+  - fixable-from-v1.2.1
+  - fixable-from-v1.2.2
+  - fixable-from-v1.2.3
+  - fixable-from-v1.2.4
+  - fixable-from-v1.2.5
+  - fixable-from-v1.2.6
+  - fixable-from-v1.3.0
+  - fixable-from-v1.3.0
+  - fixable-from-v1.3.1
+  - fixable-from-v1.3.2
+  - fixable-from-v1.4.0
+  - fixable-from-v1.4.0
+  - fixable-from-v1.4.1
+  - fixable-from-v1.4.2
+  - fixable-from-v1.4.3
+  - fixable-from-v1.4.4
+  - fixable-from-v1.5.0
+  - fixable-from-v1.5.0
+  - fixable-from-v1.5.1
+  - fixable-from-v1.5.2
+  - fixable-from-v1.6.0
+  - fixable-from-v1.6.0
+  - fixable-from-v1.6.1
+  - fixable-from-v1.6.2
+  - fixable-from-v1.6.3
+  - fixable-from-v1.6.4
   - fixable-from-v1.7.0
   - fixable-from-v1.7.0
   - fixable-from-v1.7.1
