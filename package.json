@@ -17,6 +17,7 @@
     "release": "npm t && npx semantic-release"
   },
   "dependencies": {
+    "css-select": "^2.0.2",
     "eslint-utils": "^1.4.1",
     "glob": "^7.1.4",
     "lodash.kebabcase": "^4.1.1"
