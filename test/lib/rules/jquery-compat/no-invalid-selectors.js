@@ -53,6 +53,12 @@ ruleTester.run('jquery-compat/no-invalid-selectors', rules['no-invalid-selectors
             allowJQueryExtensions: false
           }
         ]
+      },
+      {
+        code: `$foo.append('div:first')`
+      },
+      {
+        code: `$('<span>div:first</span>')`
       }
     ]),
   invalid: selectorMethods
