@@ -36,8 +36,26 @@ ruleTester.run('jquery-compat/no-invalid-selectors', rules['no-invalid-selectors
   valid: selectorMethods
     .map(methodName => ({
       code: `$(document).${methodName}("div.className")`
-    })),
-  invalid: /**/selectorMethods
+    }))
+    .concat([
+      {
+        code: `$(document).find("div:first")`,
+        options: [
+          {
+            allowJQueryExtensions: true
+          }
+        ]
+      },
+      {
+        code: `$(document).find("div:hover")`,
+        options: [
+          {
+            allowJQueryExtensions: false
+          }
+        ]
+      }
+    ]),
+  invalid: selectorMethods
     .map(methodName =>
       invalidExamples.map(selector => ({
         code: `$(document).${methodName}(${selector})`,
@@ -94,6 +112,21 @@ ruleTester.run('jquery-compat/no-invalid-selectors', rules['no-invalid-selectors
           data: {
             selector: "div:nth-child(NaN)",
             method: '$.fn.find()'
+          }
+        }]
+      },
+      {
+        code: `$(document).find("div:first")`,
+        errors: [{
+          messageId: 'no-invalid-selectors',
+          line: 1,
+          column: 18,
+          data: {
+            selector: "div:first",
+            method: "$.fn.find()"
+          },
+          options: {
+            allowJQueryExtensions: false
           }
         }]
       }
