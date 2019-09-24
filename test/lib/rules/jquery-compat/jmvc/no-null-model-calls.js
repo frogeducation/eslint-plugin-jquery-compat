@@ -12,6 +12,9 @@ ruleTester.run(
     },
     {
       code: 'Foo.Bar.Baz.findAll({ quux: null })'
+    },
+    {
+      code: 'Foo.Models.Baz.extend({ attributes: { something: null } })'
     }
   ],
   invalid: [
@@ -51,6 +54,18 @@ ruleTester.run(
         data: {
           value: null,
           path: '.corge'
+        }
+      }]
+    },
+    {
+      code: `Foo.Models.Bar.Baz.extend({ defaults: { foo: null } })`,
+      errors: [{
+        messageId: 'no-null-model-defaults',
+        line: 1,
+        column: 27,
+        data: {
+          value: null,
+          path: '.defaults.foo'
         }
       }]
     }
