@@ -59,6 +59,28 @@ ruleTester.run('jquery-compat/no-invalid-selectors', rules['no-invalid-selectors
       },
       {
         code: `$('<span>div:first</span>')`
+      },
+      {
+        code: `$foo.find('div.user:eq(1)')`,
+        options: [
+          {
+            allowJQueryExtensions: true
+          }
+        ]
+      },
+      {
+        code: `$foo.find('div:first-child')`,
+        options: [
+          {
+            allowJQueryExtensions: true
+          }
+        ]
+      },
+      {
+        code: `$foo.find('th:first-child')`
+      },
+      {
+        code: `$foo.find('th:first-child')`
       }
     ]),
   invalid: selectorMethods
