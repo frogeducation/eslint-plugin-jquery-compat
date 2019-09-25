@@ -81,6 +81,16 @@ ruleTester.run('jquery-compat/no-invalid-selectors', rules['no-invalid-selectors
       },
       {
         code: `$foo.find('th:first-child')`
+      },
+      {
+        code: `$food.find('th:custom-pseudo')`,
+        options: [
+          {
+            customPseudoClasses: [
+              'custom-pseudo'
+            ]
+          }
+        ]
       }
     ]),
   invalid: selectorMethods
