@@ -26,6 +26,9 @@ ruleTester.run('jquery-compat/no-deprecated-event-methods', rules['no-deprecated
     },
     {
       code: '$("body").on("unload", handler)'
+    },
+    {
+      code: '$("body").load("string")'
     }
   ],
   invalid: [
