@@ -30,6 +30,12 @@ ruleTester.run('jquery-compat/attr-select', rules['attr-select'], {
       },
       {
         code: `(true ? bar : $foo.model()).attr('${property}')`
+      },
+      {
+        code: `function foo(attr) { return $bar.attr(attr); }`
+      },
+      {
+        code: `$.each(["${property}"], function(i, attr) { if (element.attr(attr)) {} });`
       }
     ])
     .reduce((acc, next) => acc.concat(next))
