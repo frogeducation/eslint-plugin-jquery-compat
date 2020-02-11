@@ -22,6 +22,9 @@ ruleTester.run('jquery-compat/no-null-param', rules['no-null-param'], {
       code: `var data = { foo: null };
       data.foo = 42;
       $.ajax("hello", { data: data });`
+    },
+    {
+      code: `$.ajax({ data: null });`
     }
   ],
   invalid: [
