@@ -19,6 +19,9 @@ ruleTester.run('jquery-compat/no-attr-value', rules['no-attr-value'], {
     {
       code: `var name = "something-else";
         $(".foo").attr(name)`
+    },
+    {
+      code: `$.each(["name"], function(i, attr) { if (element.attr(attr)) {} });`
     }
   ],
   invalid: [
