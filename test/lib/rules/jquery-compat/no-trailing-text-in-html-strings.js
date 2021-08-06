@@ -2,7 +2,11 @@ const { RuleTester } = require('eslint')
 
 const rules = require('../../../../lib/rules')
 
-const ruleTester = new RuleTester()
+const ruleTester = new RuleTester({
+  parserOptions: {
+    ecmaVersion: 6
+  }
+})
 
 const now = Date.now()
 
@@ -39,6 +43,14 @@ ruleTester.run(
       }
     ],
     invalid: [
+      {
+        code: '$(`<h1>foo</h1> `)',
+        errors: [{
+          messageId: 'no-trailing-text-in-html-strings',
+          line: 1,
+          column: 3
+        }]
+      },
       {
         // jquery-migrate trims string before testing, but jquery-actual does not.
         code: '$("<h1>foo</h1> ")',
