@@ -14,7 +14,8 @@
     "lint": "eslint lib test",
     "test": "mocha --recursive",
     "watch": "npm t -- --watch",
-    "release": "npm t && npx semantic-release"
+    "release": "npm t && npx semantic-release",
+    "prepare": "husky install"
   },
   "dependencies": {
     "css-select": "^2.0.2",
@@ -28,18 +29,14 @@
     "@semantic-release/changelog": "^3.0.4",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^5.16.0",
-    "husky": "^2.4.0",
+    "husky": "^7.0.0",
     "mocha": "^6.1.4",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1"
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm t",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "license": "MIT",
   "repository": {
