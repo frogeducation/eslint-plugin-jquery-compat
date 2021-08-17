@@ -10,17 +10,17 @@ ruleTester.run(
   {
     valid: [
       {
-        code: '$.Controller("MyController", {}, { "div.foo click": function() {} })'
+        code: '$.Controller("MyController", {}, { "div.foo click": function() {} })',
       },
       {
-        code: '$.Controller("MyController", {}, { "div.foo,div.bar click": function() {} })'
+        code: '$.Controller("MyController", {}, { "div.foo,div.bar click": function() {} })',
       },
       {
-        code: '$.Controller("MyController", {}, { "div.foo, div.bar click": function() {} })'
+        code: '$.Controller("MyController", {}, { "div.foo, div.bar click": function() {} })',
       },
       {
-        code: '$.Controller("MyController", {}, { "div.foo, div.bar {click}": function() {} })'
-      }
+        code: '$.Controller("MyController", {}, { "div.foo, div.bar {click}": function() {} })',
+      },
     ],
     invalid: [
       {
@@ -29,9 +29,9 @@ ruleTester.run(
           {
             messageId: 'no-hover-event',
             line: 1,
-            column: 45
-          }
-        ]
+            column: 45,
+          },
+        ],
       },
       {
         code: '$.Controller("MyController", {}, { "div.foo, div.bar hover": function() {} })',
@@ -39,10 +39,10 @@ ruleTester.run(
           {
             messageId: 'no-hover-event',
             line: 1,
-            column: 54
-          }
-        ]
-      }
-    ]
+            column: 54,
+          },
+        ],
+      },
+    ],
   }
 )

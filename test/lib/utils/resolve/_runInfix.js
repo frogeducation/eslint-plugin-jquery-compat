@@ -30,13 +30,17 @@ describe('_runInfix', () => {
     [1, 3],
     [3, 1],
     [0, 1],
-    [1, 0]
+    [1, 0],
   ]
 
   operators
     .map(operator =>
-      inputs
-        .map(([left, right]) => [ left, operator, right, eval(`${left}${operator}${right}`) ])
+      inputs.map(([left, right]) => [
+        left,
+        operator,
+        right,
+        eval(`${left}${operator}${right}`),
+      ])
     )
     .reduce((acc, next) => acc.concat(next), [])
     .forEach(([left, operator, right, result]) => {

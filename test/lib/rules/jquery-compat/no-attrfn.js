@@ -7,23 +7,27 @@ const ruleTester = new RuleTester()
 ruleTester.run('jquery-compat/no-attrfn', rules['no-attrfn'], {
   valid: [
     {
-      code: '$(".attrFn")'
-    }
+      code: '$(".attrFn")',
+    },
   ],
   invalid: [
     {
       code: '$.attrFn',
-      errors: [{
-        messageId: 'no-attrfn',
-        line: 1,
-        column: 3
-      }]
+      errors: [
+        {
+          messageId: 'no-attrfn',
+          line: 1,
+          column: 3,
+        },
+      ],
     },
     {
       code: 'jQuery.attrFn',
-      errors: [{
-        messageId: 'no-attrfn'
-      }]
-    }
-  ]
+      errors: [
+        {
+          messageId: 'no-attrfn',
+        },
+      ],
+    },
+  ],
 })

@@ -7,26 +7,30 @@ const ruleTester = new RuleTester()
 ruleTester.run('jquery-compat/no-browser', rules['no-browser'], {
   valid: [
     {
-      code: 'if (window.Uint8Array) console.log("supported")'
+      code: 'if (window.Uint8Array) console.log("supported")',
     },
     {
-      code: 'if (something.browser) console.log("something")'
-    }
+      code: 'if (something.browser) console.log("something")',
+    },
   ],
   invalid: [
     {
       code: 'if (!$.browser.msie) console.log("supported")',
-      errors: [{
-        messageId: 'no-browser',
-        line: 1,
-        column: 8
-      }]
+      errors: [
+        {
+          messageId: 'no-browser',
+          line: 1,
+          column: 8,
+        },
+      ],
     },
     {
       code: 'if (!jQuery.browser.msie) console.log("supported")',
-      errors: [{
-        messageId: 'no-browser'
-      }]
-    }
-  ]
+      errors: [
+        {
+          messageId: 'no-browser',
+        },
+      ],
+    },
+  ],
 })

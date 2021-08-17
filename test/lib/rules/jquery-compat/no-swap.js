@@ -7,29 +7,33 @@ const ruleTester = new RuleTester()
 ruleTester.run('jquery-compat/no-swap', rules['no-swap'], {
   valid: [
     {
-      code: '$(".swap()")'
+      code: '$(".swap()")',
     },
     {
-      code: 'something.swap()'
+      code: 'something.swap()',
     },
     {
-      code: 'jQuery(".swap()")'
-    }
+      code: 'jQuery(".swap()")',
+    },
   ],
   invalid: [
     {
       code: '$.swap($(".example"), { css: "properties" }, function() {})',
-      errors: [{
-        messageId: 'no-swap',
-        line: 1,
-        column: 3
-      }]
+      errors: [
+        {
+          messageId: 'no-swap',
+          line: 1,
+          column: 3,
+        },
+      ],
     },
     {
       code: 'jQuery.swap()',
-      errors: [{
-        messageId: 'no-swap'
-      }]
-    }
-  ]
+      errors: [
+        {
+          messageId: 'no-swap',
+        },
+      ],
+    },
+  ],
 })

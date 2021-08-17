@@ -7,29 +7,33 @@ const ruleTester = new RuleTester()
 ruleTester.run('jquery-compat/no-clean', rules['no-clean'], {
   valid: [
     {
-      code: '$(".clean()")'
+      code: '$(".clean()")',
     },
     {
-      code: 'jQuery(".clean()")'
+      code: 'jQuery(".clean()")',
     },
     {
-      code: '$foo.controller().clean()'
-    }
+      code: '$foo.controller().clean()',
+    },
   ],
   invalid: [
     {
       code: '$.clean()',
-      errors: [{
-        messageId: 'no-clean',
-        line: 1,
-        column: 3
-      }]
+      errors: [
+        {
+          messageId: 'no-clean',
+          line: 1,
+          column: 3,
+        },
+      ],
     },
     {
       code: 'jQuery.clean()',
-      errors: [{
-        messageId: 'no-clean'
-      }]
-    }
-  ]
+      errors: [
+        {
+          messageId: 'no-clean',
+        },
+      ],
+    },
+  ],
 })

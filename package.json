@@ -63,6 +63,13 @@
       "defaultIssues": ""
     }
   },
+  "prettier": {
+    "arrowParens": "avoid",
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",

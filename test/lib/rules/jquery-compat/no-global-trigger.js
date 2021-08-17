@@ -7,23 +7,27 @@ const ruleTester = new RuleTester()
 ruleTester.run('jquery-compat/no-global-trigger', rules['no-global-trigger'], {
   valid: [
     {
-      code: `$(document).trigger('event')`
-    }
+      code: `$(document).trigger('event')`,
+    },
   ],
   invalid: [
     {
       code: `$.event.trigger('event')`,
-      errors: [{
-        messageId: 'no-global-trigger',
-        line: 1,
-        column: 9
-      }]
+      errors: [
+        {
+          messageId: 'no-global-trigger',
+          line: 1,
+          column: 9,
+        },
+      ],
     },
     {
       code: `jQuery.event.trigger('event')`,
-      errors: [{
-        messageId: 'no-global-trigger'
-      }]
-    }
-  ]
+      errors: [
+        {
+          messageId: 'no-global-trigger',
+        },
+      ],
+    },
+  ],
 })

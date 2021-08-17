@@ -7,23 +7,27 @@ const ruleTester = new RuleTester()
 ruleTester.run('jquery-compat/no-global-handle', rules['no-global-handle'], {
   valid: [
     {
-      code: `$(document).on('event', function() { return; })`
-    }
+      code: `$(document).on('event', function() { return; })`,
+    },
   ],
   invalid: [
     {
       code: `$.event.handle('event', function() { return; })`,
-      errors: [{
-        messageId: 'no-global-handle',
-        line: 1,
-        column: 9
-      }]
+      errors: [
+        {
+          messageId: 'no-global-handle',
+          line: 1,
+          column: 9,
+        },
+      ],
     },
     {
       code: `jQuery.event.handle('event', function() { return; })`,
-      errors: [{
-        messageId: 'no-global-handle'
-      }]
-    }
-  ]
+      errors: [
+        {
+          messageId: 'no-global-handle',
+        },
+      ],
+    },
+  ],
 })
