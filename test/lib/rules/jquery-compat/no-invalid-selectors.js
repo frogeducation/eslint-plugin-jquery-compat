@@ -2,6 +2,12 @@ const { RuleTester } = require('eslint')
 
 const rules = require('../../../../lib/rules')
 
+const ruleTester = new RuleTester({
+  parserOptions: {
+    ecmaVersion: 6,
+  },
+})
+
 const invalidExamples = [
   `'div[data-value="something"'`,
   `'#.'`,
@@ -30,8 +36,6 @@ const selectorMethods = [
   'siblings',
 ]
 
-const ruleTester = new RuleTester()
-
 ruleTester.run(
   'jquery-compat/no-invalid-selectors',
   rules['no-invalid-selectors'],
@@ -48,6 +52,20 @@ ruleTester.run(
               allowJQueryExtensions: true,
             },
           ],
+        },
+        {
+          code: '$(document).find(`div:first`)',
+          options: [
+            {
+              allowJQueryExtensions: true,
+            },
+          ],
+        },
+        {
+          code: '$(document).find(`div.${className}`)',
+        },
+        {
+          code: '$(document).find(`div.${() => "className"}`)',
         },
         {
           code: `$(document).find("div:hover")`,
