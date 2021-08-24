@@ -1,6 +1,6 @@
 {
   "name": "@frogeducation/eslint-plugin-jquery-compat",
-  "version": "2.0.0",
+  "version": "v3.5.8",
   "description": "Linting rules for checking jQuery version compatibility",
   "keywords": [
     "eslint",
