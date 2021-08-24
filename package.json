@@ -41,7 +41,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/frogeducation/eslint-plugin-jquery-compat"
+    "url": "git+ssh://git@github.com/frogeducation/eslint-plugin-jquery-compat"
   },
   "commitlint": {
     "extends": [
